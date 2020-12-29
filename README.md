@@ -2,10 +2,10 @@
 :sunny: 깃허브 꾸미기 재밌떵!!
 # 목차
 
-1. 전공
-- Computer Architecture
-- Operating System
-- Database
+1. Computer Science
+- [Computer Architecture](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Computer%20Architecture.md)
+- [Operating System](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Operating%20System.md)
+- [Database](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Database.md)
 - Network
 - Data Structure
 - Software Engineering
