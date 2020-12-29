@@ -9,7 +9,7 @@
 - Network
 - Data Structure
 - Software Engineering
-2. [알고리즘](https://github.com/lee-june0210/Algorithm/blob/main/Algorithm)
+2. [알고리즘](https://github.com/lee-june0210/june-Github/tree/main/Algorithm)
 3. 웹 프로그래밍(풀스택)
 4. 앱 프로그래밍
 5. 데이터 프로젝트
