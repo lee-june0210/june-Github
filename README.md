@@ -1,5 +1,6 @@
 
-:sunny: # 목차
+:sunny: 
+# 목차
 
 1. 전공
 - Computer Architecture
