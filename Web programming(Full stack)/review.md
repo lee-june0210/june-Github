@@ -96,3 +96,7 @@ LifecycleServlet 수정 실습
 Service(request, response)메소드 주석처리
 HttpServlet의 doGet(request, response)메소드 오버라이딩
 HttpServlet의 doPost(request, response)메소드 오버라이딩
+
+#### 1번 프로젝트 시작
+
+.....밑바닥에서 
