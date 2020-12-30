@@ -77,4 +77,17 @@ JDK, Eclipse, apache Tomcat 설치 및 환경 설정 완료
 예를 들어, 웹 페이지를 구성하는 화면(HTML)은 JSP로 표현하고, 복잡한 프로그래밍은 서블릿으로 구현합니다.
 
 
+tlqkf 날라갔어..........
 
+service(request, response) 메소드
+
+HttpServlet의 service메소드는 템플릿 메소드 패턴으로 구현합니다.
+
+클라이언트의 요청이 GET일 경우에는 자신이 가지고 있는 doGet(request, response)메소드를 호출
+클라이언트의 요청이 Post일 경우에는 자신이 가지고 있는 doPost(request, response)를 호출
+ 
+LifecycleServlet 수정 실습
+
+Service(request, response)메소드 주석처리
+HttpServlet의 doGet(request, response)메소드 오버라이딩
+HttpServlet의 doPost(request, response)메소드 오버라이딩
