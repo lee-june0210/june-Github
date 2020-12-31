@@ -203,3 +203,7 @@ layout 구현방법은?
 
 엘리먼트안의 텍스트의 간격과 다른 엘리먼트간의 간격은 padding과 margin 속성을 잘 활용해서 위치시킵니다.
 
+
+float를 부모에게 자식으로 인식시키기 -> overflow
+
+float 다른 엘리먼트에 인식시키기 -> clear
