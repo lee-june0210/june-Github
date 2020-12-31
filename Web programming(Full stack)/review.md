@@ -100,3 +100,106 @@ HttpServlet의 doPost(request, response)메소드 오버라이딩
 #### 1번 프로젝트 시작
 
 .....밑바닥에서 
+
+
+엘리먼트가 배치되는 방식 (position:static, relative, absolute)
+
+엘리먼트 배치가 순서대로만 위아래로 또는 좌우로 흐르면서 쌓이기만 하면, 다양한 배치를 하기 어렵습니다.
+
+position 속성을 사용하면 상대적/절대적으로 어떤 위치에 엘리먼트를 배치하는 것이 수월합니다.
+
+ 
+
+1. position 속성으로 특별한 배치를 할 수 있습니다.
+
+position 속성은 기본 static입니다.
+
+그냥 순서대로 배치됩니다.
+
+ 
+
+2. absolute는 기준점에 따라서 특별한 위치에 위치합니다.
+
+top / left / right / bottom 으로 설정합니다.
+
+기준점을 상위엘리먼트로 단계적으로 찾아가는데 static이 아닌 position이 기준점입니다.
+
+ 
+
+3. relative는 원래 자신이 위치해야 할 곳을 기준으로 이동합니다.
+
+top / left / right / bottom로 설정합니다.
+
+ 
+
+4 fixed는 viewport(전체화면) 좌측, 맨 위를 기준으로 동작합니다.
+
+code 바로가기
+
+
+엘리먼트가 배치되는 방식 (margin:10px)
+
+margin으로 배치가 달라질 수 있습니다.
+
+margin은 위 / 아래 / 좌 / 우 엘리먼트와 본인 간의 간격입니다.
+
+따라서 그 간격만큼 내 위치가 달라집니다.
+
+
+엘리먼트가 배치되는 방식 (float:left)
+
+float 속성으로 원래 flow에서 벗어날 수 있고 둥둥 떠다닐 수 있습니다.
+
+일반적인 배치에 따라서 배치된 상태에서 float는 벗어난 형태로 특별히 배치됩니다.
+
+따라서 뒤에 block엘리먼트가 float 된 엘리먼트를 의식하지 못하고 중첩돼서 배치됩니다.
+
+code 바로가기
+
+float의 속성은 이런 특이성 때문에 웹사이트의 전체 레이아웃 배치에서 유용하게 활용됩니다.
+
+
+엘리먼트가 배치되는 방식 (box-model)
+
+블록 엘리먼트의 경우 box의 크기와 간격에 관한 속성으로 배치를 추가 결정합니다.
+
+margin, padding, border, outline으로 생성되는 것입니다.
+
+code 바로가기
+
+box-shadow 속성도 box-model에 포함지어 설명할 수 있습니다.
+
+box-shadow는 border 밖에 테두리를 그릴 수 있는 속성입니다.
+
+
+엘리먼트의 크기
+
+block엘리먼트의 크기는 기본적으로는 부모의 크기만큼을 가집니다.
+
+예를 들어, width:100%는 부모의 크기만큼을 다 갖는 것과 같습니다.
+
+
+box-sizing과 padding
+
+padding 속성을 늘리면 엘리먼트의 크기가 달라질 수 있습니다.
+
+box-sizing 속성으로 이를 컨트롤 할 수 있습니다.
+
+box-sizing 속성을 border-box로 설정하면 엘리먼트의 크기를 고정하면서 padding 값만 늘릴 수 있습니다.
+
+code 바로가기
+
+ 
+
+layout 구현방법은?
+
+전체 레이아웃은 float를 잘 사용해서 2단, 3단 컬럼 배치를 구현합니다.
+
+최근에는 css-grid나 flex 속성 등 layout을 위한 속성을 사용하기 시작했으며 브라우저 지원범위를 확인해서 사용하도록 합니다.
+
+특별한 위치에 배치하기 위해서는 position absolute를 사용하고, 기준점을 relative로 설정합니다.
+
+네비게이션과 같은 엘리먼트는 block 엘리먼트를 inline-block으로 변경해서 가로로 배치하기도 합니다.
+
+엘리먼트안의 텍스트의 간격과 다른 엘리먼트간의 간격은 padding과 margin 속성을 잘 활용해서 위치시킵니다.
+
