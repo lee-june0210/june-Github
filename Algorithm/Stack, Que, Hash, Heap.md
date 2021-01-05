@@ -42,10 +42,12 @@ clear()	모든 원소를 지운다.
 
 ## 가장 큰수
 
-# 숫자를 다 쪼개서 list에 하나씩 넣기
-# 자기 앞에가 자기보다 작으면 pop 시키기 ( cnt가 0이 될때까지 )
-# 자기를 스택에 넣기
-# 다 돌았는데 cnt가 남으면 [:cnt] 이런거 해서 cnt 나머지 길이만큼 짜르기
+##### 풀이 방법
+    숫자를 다 쪼개서 list에 하나씩 넣기
+    자기 앞에가 자기보다 작으면 pop 시키기 ( cnt가 0이 될때까지 )
+    자기를 스택에 넣기
+    다 돌았는데 cnt가 남으면 [:cnt] 이런거 해서 cnt 나머지 길이만큼 짜르기
+
 ```python
 a, cnt = map(int,input().split())
 lst = []
@@ -73,8 +75,8 @@ print("".join(list(map(str,stack))))
 ## 정리 
 ------------------
 > ''.join()
-list의 
-''.join(list_name)을 쓸 때, list의 모든 element들은 문자여야 한다. 즉 list에 저장된 값이 정수이거나 실수이면 이와 같은 에러가 뜰 것이다.
+
+list의 ''.join(list_name)을 쓸 때, list의 모든 element들은 문자여야 한다. 즉 list에 저장된 값이 정수이거나 실수이면 이와 같은 에러가 뜰 것이다.
 
 ### 디버깅
     lst[i] > stack[i-1]
