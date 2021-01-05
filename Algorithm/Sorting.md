@@ -1,6 +1,34 @@
 
 # 정렬, 완전 탐색
 
+
+## 단어찾기 
+
+```python
+n = int(input())
+lst = []
+nxt_lst = []
+for _ in range(n):
+    word = input()
+    lst.append(word)
+for _ in range(n-1):
+    nxt = input()
+    nxt_lst.append(nxt)
+    
+lst.sort()
+nxt_lst.sort()
+
+list(set(lst) - set(nxt_lst))
+```
+
+### 정리 
+-------------
+> set
+
+* 중복 제거
+* [] -> {} 집합으로 형태변환
+* set()-set() 빼기 가능; 없는 요소만 남음
+
 ## 모의고사 
 
 ```python
@@ -51,35 +79,3 @@ max(list)하면 바로 값을 찾아줌. for문 돌려서 max 값을 찾을 필�
 
 
 
-
-## 기능개발
-
-```python
-
-cnt = 1
-lst = [0]*len(progresses)
-answer = []
-count = 0
-
-while lst:
-    for i in range(len(lst)):
-        res = progresses[i] + speeds[i]*cnt
-        lst[i] = res
-        n = len(lst) 
-    for _ in range(len(lst)):        
-        if lst[0] > 99:
-            lst.remove(lst[0])
-            progresses.remove(progresses[0])
-            speeds.remove(speeds[0])
-            count += 1
-            
-    if len(lst) < n:
-        answer.append(count)
-        count = 0
-
-    cnt += 1
-```
-
-### 정리
---------------------
-> 새로운 함수 없이 내가 알고 있는 지식으로 풀어냄. 할 수 있다.
