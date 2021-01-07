@@ -1,6 +1,37 @@
 
 # 정렬, 완전 탐색
 
+## 단어찾기
+
+```python
+participant = ["aeo", "kiki", "eden"] 
+completion = ["eden", "kiki"]
+
+
+participant.sort()
+completion.sort()
+
+for i in range(len(completion)):
+    if participant[i] != completion[i]:
+        print(participant[i])
+        break
+else : 
+    print(participant[-1])
+```
+
+#### 참고
+-------------
+> def 함수 속 return
+
+```python
+for i in range(len(completion)):
+    if participant[i] != completion[i]:
+        return participant[i] 
+        break
+else : 
+    return participant[-1] 
+```
+returnd을 이렇게 바로 뽑아내도됨
 
 ## 단어찾기 
 
