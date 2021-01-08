@@ -103,7 +103,7 @@ for idx, s in enumerate(score):
         result.append(idx+1)
 ```
 
-max(list)하면 바로 값을 찾아줌. for문 돌려서 max 값을 찾을 필요가 
+max(list)하면 바로 값을 찾아줌. for문 돌려서 max 값을 찾을 필요가 없음.
             
 
 
