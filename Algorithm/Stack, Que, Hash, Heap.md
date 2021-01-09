@@ -1,5 +1,72 @@
 # 스택, 큐, 해시, 힙
 
+## :mega:주식 가격_
+
+```python
+
+answer = []
+lst = list(prices)
+
+for i in range(len(lst)):
+    cnt = 0
+    for j in range(i+1,len(prices)):
+        cnt += 1
+        if lst[i] <= prices[j]:
+            continue
+        else:
+            break
+    answer.append(cnt)
+```
+
+### 정리 
+-------------
+* for문 조건절 사용 가능
+```python 
+for _ in lst:
+    if True:
+        continue
+    else : 
+        break
+```
+* lst.pop(index) 가능
+```python
+lst.pop(0)
+```
+lst.pop()해서 원래 stack 구조처럼 맨 나중에 들어간 것만 나올 수 있다고 생각했는데 index 지정해서 뺄 수 있음
+
+## :mega:기능개발
+
+```python
+
+cnt = 1
+lst = [0]*len(progresses)
+answer = []
+count = 0
+
+while lst:
+    for i in range(len(lst)):
+        res = progresses[i] + speeds[i]*cnt
+        lst[i] = res
+        n = len(lst) 
+    for _ in range(len(lst)):        
+        if lst[0] > 99:
+            lst.remove(lst[0])
+            progresses.remove(progresses[0])
+            speeds.remove(speeds[0])
+            count += 1
+            
+    if len(lst) < n:
+        answer.append(count)
+        count = 0
+
+    cnt += 1
+```
+
+### 정리 
+-------------
+* remove말고 pop을 사용하면 어떻게 
+
+
 ## :mega:공주 구하기_큐
 
 ```python
@@ -84,30 +151,3 @@ list의 ''.join(list_name)을 쓸 때, list의 모든 element들은 문자여야
     lst[i] > stack[-1]
 stack[-1]을 통해 문제 해결! pop으로 요소를 제거하는 스택 구조였기에 가능했음. 
 
-## :mega:기능개발
-
-```python
-
-cnt = 1
-lst = [0]*len(progresses)
-answer = []
-count = 0
-
-while lst:
-    for i in range(len(lst)):
-        res = progresses[i] + speeds[i]*cnt
-        lst[i] = res
-        n = len(lst) 
-    for _ in range(len(lst)):        
-        if lst[0] > 99:
-            lst.remove(lst[0])
-            progresses.remove(progresses[0])
-            speeds.remove(speeds[0])
-            count += 1
-            
-    if len(lst) < n:
-        answer.append(count)
-        count = 0
-
-    cnt += 1
-```
