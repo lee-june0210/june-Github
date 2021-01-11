@@ -3,6 +3,7 @@
 <br>
 <br>
 
+
 ## 카펫
 ```python
 def divide(num):
@@ -42,6 +43,27 @@ def solution(brown, yellow):
 * 함수 막 쓰지말기.
 함수는 쓰면 확실히 속도가 느려진다. 
 
+
+## 전화번호부
+```python
+def solution(phone_book):
+
+    for i in range (len(phone_book)):
+        for j in range (i+1, len(phone_book)):
+            if phone_book[j].startswith(phone_book[i]):# startwith의 발견이다....python은 함수빨이군.....
+                return False
+            elif phone_book[i].startswith(phone_book[j]):
+                return False
+    return True
+```
+9일을 고민했던 건데 함수 쓰니깐 22분만에 풀렸다.
+
+### 정리 
+-------------
+* startswith 
+접두어 일치 찾아주는 함수
+_str.startswith('str')_ 하면 일치 여부에 따라 True와 False를 반환한다.
+
 ## 마라톤
 
 ```python
@@ -62,7 +84,7 @@ else :
 
 #### 참고
 -------------
-> def 함수 속 return
+* def 함수 속 return
 
 ```python
 for i in range(len(completion)):
@@ -95,11 +117,10 @@ list(set(lst) - set(nxt_lst))
 
 ### 정리 
 -------------
-> set
-
-* 중복 제거
-* [] -> {} 집합으로 형태변환
-* set()-set() 빼기 가능; 없는 요소만 남음
+* set 기능
+1. 중복 제거
+2. [] -> {} 집합으로 형태변환
+3. set()-set() 빼기 가능; 없는 요소만 남음
 
 ## 모의고사 
 
