@@ -1,4 +1,5 @@
-# <PART1. 컴퓨터 일반> Computer Architecture
+# <PART1. 컴퓨터 일반> 
+## Computer Architecture
 
 
 
