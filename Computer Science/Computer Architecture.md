@@ -1,8 +1,8 @@
-# Computer Architecture
+# <PART1. 컴퓨터 일반> Computer Architecture
 
-<PART1. 컴퓨터 일반>
 
-1.1. 논리 회로
+
+### 1.1. 논리 회로
 
 기본 게이트
 
