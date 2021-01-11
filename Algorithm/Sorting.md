@@ -1,7 +1,48 @@
 
 # 정렬, 완전 탐색
+<br>
+<br>
 
-## 단어찾기
+## 카펫
+```python
+def divide(num):
+    arr = [] 
+    for i in range(3,num//3+1):
+        lst = []
+        if num%i == 0:
+            lst.append(i)
+            lst.append(num//i)
+            arr.append(lst)
+    return arr
+
+def solution(brown, yellow):
+    for a,b in divide(brown+yellow):
+        print(a,b)
+        if (a-2)*(b-2) == yellow :
+            return [b,a]
+```
+....충격의 도가니 원래는 이렇게 했었다. 근데 
+
+```python
+def solution(brown, yellow):
+    num = brown+yellow
+    for i in range(3,num//3+1):
+        if num%i == 0:
+            if (i-2)*((num//i)-2) == yellow :
+                return [num//i,i]
+```
+이렇게 하니깐 속도가 2배는 빨라졌다........개 충격.................
+
+### 정리 
+-------------
+* if문 조건은 정확한 방정식으로 하기
+> ex) _a>=b b<brown/2_ 이렇게 했더니 내가 갖고 있는 테케는 다맞아도 문제 풀 때 잡을 수 없는 걸 절대 못잡음 _(a-2)*(b-2) == yellow_ 이런식으로 방정식 세워서 정확한 조건절 구하기
+* return 위치
+결과값 바로 뜨는 위치가 있다면 return 바로 걸어서 효율성 올리기
+* 함수 막 쓰지말기.
+함수는 쓰면 확실히 속도가 느려진다. 
+
+## 마라톤
 
 ```python
 participant = ["aeo", "kiki", "eden"] 
