@@ -5,8 +5,8 @@
 
 ### 1.1. 논리 회로
 
-기본 게이트
-
+* 기본 게이트
+<img src="https://user-images.githubusercontent.com/76678910/104309610-c7d17800-5515-11eb-8d64-11100e2ca46d.jpg" width="50%" height="50%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
 
 
 조합 논리 회로
