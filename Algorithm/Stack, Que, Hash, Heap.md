@@ -1,6 +1,6 @@
 # 스택, 큐, 해시, 힙
 
-## :mega:주식 가격_
+## :mega:주식 가격
 
 ```python
 
@@ -109,17 +109,12 @@ clear()	모든 원소를 지운다.
 
 ## :mega:가장 큰수
 
-#### 풀이 방법
-    숫자를 다 쪼개서 list에 하나씩 넣기
-    자기 앞에가 자기보다 작으면 pop 시키기 ( cnt가 0이 될때까지 )
-    자기를 스택에 넣기
-    다 돌았는데 cnt가 남으면 [:cnt] 이런거 해서 cnt 나머지 길이만큼 짜르기
+#### 풀이 방법_3번 풀었는데 풀때마다 헤멤
 
 ```python
 a, cnt = map(int,input().split())
 lst = []
 stack = []
-
 
 while a > 0:
     lst.append(a%10)
@@ -139,15 +134,40 @@ if cnt != 0:
     
 print("".join(list(map(str,stack))))
 ```
+2번째 풀었을 때
+```python
+def solution(number, k):
+    lst = list(map(int,list(number)))
+    stack = []
+    stack.append(lst[0])
+    for i in range(1,len(lst)):
+
+        while len(stack) >= 1 and stack[-1] < lst[i] and  k > 0:
+            stack.pop()
+            k -= 1
+        stack.append(lst[i])
+        # print(stack)
+    if k == 0:
+        return ''.join(map(str,list(stack)))
+    else :
+        return ''.join(map(str,list(stack[:-k])))
+```
+
 ### 정리 
 ------------------
-> ''.join()
-
+* ''.join()
+''.join(list(map(str,stack))) 개안외워짐 좀 외워라
 list의 ''.join(list_name)을 쓸 때, list의 모든 element들은 문자여야 한다. 즉 list에 저장된 값이 정수이거나 실수이면 이와 같은 에러가 뜰 것이다.
+* 숫자, 글자 쪼개기_외우기
+```python
+lst = list(map(int,list(number)))
+```
 
 #### 디버깅
     lst[i] > stack[i-1]
-여기서 자꾸 'list out of range' 오류가 떴었음. 답을 살짝 참고해보니 
+여기서 자꾸 'list out of range' 오류가 떴었음. 글고 오류가 문제가 아니라 i랑 i-1 or i+1 만 비교해서는 답대로 안나오는 알고리즘임.
     lst[i] > stack[-1]
 stack[-1]을 통해 문제 해결! pop으로 요소를 제거하는 스택 구조였기에 가능했음. 
+
+### 개안외워지는거
 
