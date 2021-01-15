@@ -44,7 +44,7 @@ main.jsp/mainServlet todoForm.jsp/todoFormServlet Todo
 14. main.jsp에서 전달받은 결과를 JSTL과 EL을 이용해서 출력하라는데 JSTL, EL이 뭐임........
 16. 할일등록 작성 후 제출 버튼을 누르면 post방식으로 TodoAddServlet로 값이 전달되고 여기서 TodoDao(이게 테이블 이름인가? ㄴㄴ 클래스 이름)를 이용해 테이블에 저장하고 메인화면 다시 주기
 
-
+>210114
 Maven이란?
 
 Maven은 지금까지 애플리케이션을 개발하기 위해 반복적으로 진행해왔던 작업들을 지원하기 위하여 등장한 도구입니다. 
@@ -79,7 +79,10 @@ Maven을 사용하게 되면 Maven에 설정한 대로 모든 개발자가 일�
 
 Maven은 또한 다양한 플러그인을 제공해줘서, 굉장히 많은 일들을 자동화시킬 수 있습니다.
 
- 
+>210115
+Maven으로 생성된 프로젝트의 경우 자바 소스는 src/main/java 폴더에 생성됩니다.
+웹 어플리케이션과 관련된 html, css등은 src/main/webapp 폴더에서 작성해야 합니다.
+
 
 >210104 9일차 
 
