@@ -114,6 +114,26 @@ redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면
             RequestDispatcher requestDispatehcer = request.getRequestDispatcher("/next"); // 포워드하는 코드
             requestDispatehcer.forward(request, response);
 ```
+
+
+```java
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<html>");
+        out.println("<head><title>form</title></head>");
+        out.println("<body>");
+
+        int dice = (Integer)request.getAttribute("dice");
+        out.println("dice : " + dice);
+        for(int i = 0; i < dice; i++) {
+            out.print("<br>hello");
+        }
+        out.println("</body>");
+        out.println("</html>");
+    }
+```
+
 > 210104 9일차 
 
 #### 디버깅 성공?
