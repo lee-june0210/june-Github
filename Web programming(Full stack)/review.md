@@ -112,7 +112,7 @@ redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면
             request.setAttribute("dice", diceValue);// 맡겨 놓을 수 있는 객체를 setAttribute라고 한다. diceValue는 세탁물이고, "dice"는 맡긴 이름. 나중에 "dice"라고 찾으면 diceValue값이 나온다. 
 
             RequestDispatcher requestDispatehcer = request.getRequestDispatcher("/next"); // 포워드하는 코드
-            requestDispatehcer.forward(request, response);
+            requestDispatehcer.forward(request, response); // 얘도 포워드 하기 위해 무조건 적어야하나봐
 ```
 
 
