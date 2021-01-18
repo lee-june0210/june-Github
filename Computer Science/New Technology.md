@@ -1,3 +1,6 @@
+# <PART6. 신기술>
+## New Technology
+
 ### **AI/ML 용어 정리**
 
 ---
