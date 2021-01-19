@@ -109,7 +109,8 @@ redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면
             
             int diceValue = (int)(Math.random() * 6) + 1; 
             request.setAttribute("dice", diceValue);
-            // 맡겨 놓을 수 있는 객체를 setAttribute라고 한다. diceValue는 세탁물이고, "dice"는 맡긴 이름. 나중에 "dice"라고 찾으면 diceValue값이 나온다. 
+            // 맡겨 놓을 수 있는 객체를 setAttribute라고 한다. diceValue는 세탁물이고
+	    //"dice"는 맡긴 이름. 나중에 "dice"라고 찾으면 diceValue값이 나온다. 
 
             RequestDispatcher requestDispatehcer = request.getRequestDispatcher("/next"); // 포워드하는 코드
             requestDispatehcer.forward(request, response); // 얘도 포워드 하기 위해 무조건 적어야하나봐
@@ -137,21 +138,21 @@ redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면
 
 보통은 이런 JDBC를 직접 사용하지 않고 프레임워크를 쓴다 하지만 이렇게 원리를 이해하고 사용하면 문제해결이 보다 용이해진다. 
 
+#### IMPORT
 ```java
-//IMPORT
 import java.sql.*;
- 
-// 드라이버 로드
-
+``` 
+#### 드라이버 로드
+```java
 Class.forName( "com.mysql.jdbc.Driver" );
- 
-// Connection 얻기
-
+``` 
+#### Connection 얻기
+```java
 String dburl  = "jdbc:mysql://localhost/dbName";
 Connection con =  DriverManager.getConnection ( dburl, ID, PWD );
- 
-//소스코드 예제
-
+```
+#### 소스코드 예제
+```java
 public static Connection getConnection() throws Exception{
 	String url = "jdbc:oracle:thin:@117.16.46.111:1521:xe";
 	String user = "smu";
@@ -161,24 +162,23 @@ public static Connection getConnection() throws Exception{
 	conn = DriverManager.getConnection(url, user, password);
 	return conn;
 }
- 
-// Statement 생성
-
+``` 
+#### Statement 생성
+```java
 Statement stmt = con.createStatement();
- 
-// 질의 수행
-
+```
+#### 질의 수행
+```java
 ResultSet rs = stmt.executeQuery("select no from user" );
-
-// ResultSet으로 결과 받기
-
+```
+#### ResultSet으로 결과 받기
+```java
 ResultSet rs =  stmt.executeQuery( "select no from user" );
 while ( rs.next() )
       System.out.println( rs.getInt( "no") );
- 
-
-// Close
-
+```
+#### Close
+```java
 rs.close();
 stmt.close();
 con.close();
