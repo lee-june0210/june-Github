@@ -3,18 +3,48 @@
 
 ### SQL 문법 정리
 
-SELECT * FROM  DEPARTMENT;
-select empno, name, job from employee;
+<img src="https://user-images.githubusercontent.com/76678910/105007477-62ccd380-5a7b-11eb-96e9-0ace40abd86a.png" width="60%" height="60%"></img>
+
+<img src="https://user-images.githubusercontent.com/76678910/105007473-62343d00-5a7b-11eb-80b4-a1c00f434af2.png" width="60%" height="60%"></img>
+
+
+
+
+```sql
+SELECT * 
+FROM  DEPARTMENT;
+
+select empno, name, job 
+from employee;
+
 SELECT concat( empno, '-', deptno) AS '사번-부서번호' 
 FROM employee;
-select distinct deptno from employee;
-select empno, name, job from employee order by name;
 
-select empno as 사번, name as 이름, job as 직업 from employee order by 이름;
-select empno, name, job from employee order by name desc;
+select distinct deptno 
+from employee;
+```
+<img src="https://user-images.githubusercontent.com/76678910/105007465-61031000-5a7b-11eb-95e1-c99cf208e616.png" width="60%" height="60%"></img>
+```sql
+select empno, name, job 
+from employee 
+order by name;
 
-select name, deptno from employee where deptno in (10, 30);
-select name, job from employee where name like '%A%';
+select empno as 사번, name as 이름, job as 직업 
+from employee 
+order by 이름;
+
+select empno, name, job 
+from employee 
+order by name desc;
+
+select name, deptno 
+from employee 
+where deptno in (10, 30);
+
+select name, job 
+from employee 
+where name like '%A%';
+
 SELECT 구문 예제(함수의 사용)
 
 UCASE, UPPER
@@ -123,3 +153,4 @@ SELECT ANIMAL_ID
      , TO_CHAR(DATETIME, 'YYYY-MM-DD') AS "날짜"
     FROM ANIMAL_INS
     ORDER BY ANIMAL_ID;
+```
