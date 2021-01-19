@@ -4,8 +4,9 @@
 ### SQL 문법 정리
 
 
+<img scr="https://user-images.githubusercontent.com/76678910/105009617-0a4b0580-5a7e-11eb-9f71-89d578bdfa57.png" width="60%" height="60%"></img>
 
-<img src="https://user-images.githubusercontent.com/76678910/105007473-62343d00-5a7b-11eb-80b4-a1c00f434af2.png" width="60%" height="60%"></img>
+
 
 
 
@@ -46,9 +47,11 @@ where deptno in (10, 30);
 select name, job 
 from employee 
 where name like '%A%';
+```
+<img src="https://user-images.githubusercontent.com/76678910/105007473-62343d00-5a7b-11eb-80b4-a1c00f434af2.png" width="60%" height="60%"></img>
 
 SELECT 구문 예제(함수의 사용)
-
+```
 UCASE, UPPER
 mysql> SELECT UPPER('SEoul'), UCASE('seOUL');
 
@@ -79,8 +82,9 @@ mysql> SELECT ABS(2), ABS(-2);
 
 MOD(n,m) % : n을 m으로 나눈 나머지 값을 출력합니다.
 mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
-
+```
 ### SQL_오류 모음
+```
 ORDER BY
 ORDER BY NAME ASC, DATETIME DESC
 이렇게 하면 NAME으로 먼저 정렬하고 NAME 중복되는 거에 한해서 DATETIME 정렬됨
