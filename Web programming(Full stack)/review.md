@@ -1,6 +1,6 @@
 
 
-## 두번째 프로젝트 시작_210113
+# 두번째 프로젝트 시작_210113
 
 
 jsp는 자체적으로 동작되는게 아니라 모두 서블릿으로 바뀌어 동작한다. <%%>는 지시자라고 하는데 서블릿으로 바뀔때 동작 하는 방법을 알려준다.
@@ -45,7 +45,7 @@ main.jsp/mainServlet todoForm.jsp/todoFormServlet Todo
 16. 할일등록 작성 후 제출 버튼을 누르면 post방식으로 TodoAddServlet로 값이 전달되고 여기서 TodoDao(이게 테이블 이름인가? ㄴㄴ 클래스 이름)를 이용해 테이블에 저장하고 메인화면 다시 주기
 
 >210114
-Maven이란?
+* Maven이란?
 
 Maven은 지금까지 애플리케이션을 개발하기 위해 반복적으로 진행해왔던 작업들을 지원하기 위하여 등장한 도구입니다. 
 Maven을 사용하면 빌드(Build), 패키징, 문서화, 테스트와 테스트 리포팅, git, 의존성관리, svn등과 같은 형상관리서버와 연동(SCMs), 배포 등의 작업을 손쉽게 할 수 있습니다.
@@ -55,8 +55,7 @@ CoC란 일종의 관습을 말하는데, 예를 들자면 프로그램의 소스
 Maven을 사용한다는 것은 어쩌면 이러한 관습 즉 CoC에 대해서 알아나가는 것이라고도 말할 수 있습니다. 
 
 
-
-Maven을 사용할 경우 얻게 되는 이점은?
+* 장점
 Maven을 사용할 경우, 굉장히 편리한 점들이 많습니다.
 많은 사람이 손꼽는 장점 중에는 편리한 의존성 라이브러리 관리가 있습니다.
 앞에서 JSTL을 학습할 때, 몇 가지 파일을 다운로드 하여 /WEB-INF/lib폴더에 복사하여 사용했었습니다.
@@ -109,7 +108,8 @@ redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             
             int diceValue = (int)(Math.random() * 6) + 1; 
-            request.setAttribute("dice", diceValue);// 맡겨 놓을 수 있는 객체를 setAttribute라고 한다. diceValue는 세탁물이고, "dice"는 맡긴 이름. 나중에 "dice"라고 찾으면 diceValue값이 나온다. 
+            request.setAttribute("dice", diceValue);
+            // 맡겨 놓을 수 있는 객체를 setAttribute라고 한다. diceValue는 세탁물이고, "dice"는 맡긴 이름. 나중에 "dice"라고 찾으면 diceValue값이 나온다. 
 
             RequestDispatcher requestDispatehcer = request.getRequestDispatcher("/next"); // 포워드하는 코드
             requestDispatehcer.forward(request, response); // 얘도 포워드 하기 위해 무조건 적어야하나봐
@@ -133,9 +133,56 @@ redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면
         out.println("</html>");
     }
 ```
+<img src="https://user-images.githubusercontent.com/76678910/104908054-407a7d80-59c9-11eb-9c95-4339af860c07.png" width="60%" height="60%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
 
-![2_11_1_JDBC_](https://user-images.githubusercontent.com/76678910/104908054-407a7d80-59c9-11eb-9c95-4339af860c07.png)
 보통은 이런 JDBC를 직접 사용하지 않고 프레임워크를 쓴다 하지만 이렇게 원리를 이해하고 사용하면 문제해결이 보다 용이해진다. 
+
+```java
+//IMPORT
+import java.sql.*;
+ 
+// 드라이버 로드
+
+Class.forName( "com.mysql.jdbc.Driver" );
+ 
+// Connection 얻기
+
+String dburl  = "jdbc:mysql://localhost/dbName";
+Connection con =  DriverManager.getConnection ( dburl, ID, PWD );
+ 
+//소스코드 예제
+
+public static Connection getConnection() throws Exception{
+	String url = "jdbc:oracle:thin:@117.16.46.111:1521:xe";
+	String user = "smu";
+	String password = "smu";
+	Connection conn = null;
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	conn = DriverManager.getConnection(url, user, password);
+	return conn;
+}
+ 
+// Statement 생성
+
+Statement stmt = con.createStatement();
+ 
+// 질의 수행
+
+ResultSet rs = stmt.executeQuery("select no from user" );
+
+// ResultSet으로 결과 받기
+
+ResultSet rs =  stmt.executeQuery( "select no from user" );
+while ( rs.next() )
+      System.out.println( rs.getInt( "no") );
+ 
+
+// Close
+
+rs.close();
+stmt.close();
+con.close();
+```
 
 > 210104 9일차 
 
