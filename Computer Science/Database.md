@@ -10,33 +10,37 @@
 
 
 
-
 ```sql
 SELECT * 
 FROM  DEPARTMENT;
 
-select empno, name, job 
-from employee;
+SELECT EMPNO, NAME, JOB
+FROM EMPLOYEE;
 
-SELECT concat( empno, '-', deptno) AS '사번-부서번호' 
-FROM employee;
+SELECT CONCAT(EMPNO, '-', DEPTNO) AS '사번-부서번호'
+FROM EMPLOYEE
 
-select distinct deptno 
-from employee;
+SELECT DISTINCT DEPTNO
+FROM EMPLOYEE;
+
 ```
 <img src="https://user-images.githubusercontent.com/76678910/105007465-61031000-5a7b-11eb-95e1-c99cf208e616.png" width="60%" height="60%"></img>
 ```sql
-select empno, name, job 
-from employee 
-order by name;
 
-select empno as 사번, name as 이름, job as 직업 
-from employee 
-order by 이름;
 
-select empno, name, job 
-from employee 
-order by name desc;
+SELECT EMPNO, NAME, JOB
+FROM EMPLOYEE
+ORDER BY NAME;
+
+SELECT EMPNO AS 사번, NAME AS 이름, JOB AS 직업
+FROM EMPLOYEE
+ORDER BY 이름;
+
+SELECT EMPNO, NAME, JOB
+FROM EMPLOYEE
+ORDER BY NAME DESC;
+
+
 ```
 <img src="https://user-images.githubusercontent.com/76678910/105007477-62ccd380-5a7b-11eb-96e9-0ace40abd86a.png" width="60%" height="60%"></img>
 ```
@@ -51,7 +55,7 @@ where name like '%A%';
 <img src="https://user-images.githubusercontent.com/76678910/105007473-62343d00-5a7b-11eb-80b4-a1c00f434af2.png" width="60%" height="60%"></img>
 
 SELECT 구문 예제(함수의 사용)
-```
+```sql
 UCASE, UPPER
 mysql> SELECT UPPER('SEoul'), UCASE('seOUL');
 
@@ -70,9 +74,7 @@ TRIM, LTRIM, RTRIM
 mysql> SELECT LTRIM(' hello '), RTRIM(' hello ');
 
 SELECT deptno, AVG(salary) , SUM(salary)
-
 FROM employee
-
 group by deptno;
 
 mysql> SELECT TRIM(' hi '),TRIM(BOTH 'x' FROM 'xxxhixxx');
