@@ -3,7 +3,7 @@
 
 ### SQL 문법 정리
 
-<img src="https://user-images.githubusercontent.com/76678910/105007477-62ccd380-5a7b-11eb-96e9-0ace40abd86a.png" width="60%" height="60%"></img>
+
 
 <img src="https://user-images.githubusercontent.com/76678910/105007473-62343d00-5a7b-11eb-80b4-a1c00f434af2.png" width="60%" height="60%"></img>
 
@@ -36,7 +36,9 @@ order by 이름;
 select empno, name, job 
 from employee 
 order by name desc;
-
+```
+<img src="https://user-images.githubusercontent.com/76678910/105007477-62ccd380-5a7b-11eb-96e9-0ace40abd86a.png" width="60%" height="60%"></img>
+```
 select name, deptno 
 from employee 
 where deptno in (10, 30);
