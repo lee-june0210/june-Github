@@ -169,5 +169,7 @@ lst = list(map(int,list(number)))
 #### 디버깅
     lst[i] > stack[i-1]
 여기서 자꾸 'list out of range' 오류가 떴었음. 글고 오류가 문제가 아니라 i랑 i-1 or i+1 만 비교해서는 답대로 안나오는 알고리즘임.
-```lst[i] > stack[-1]```
+```
+lst[i] > stack[-1]
+```
 stack[-1]을 통해 문제 해결! pop으로 요소를 제거하는 스택 구조였기에 가능했음. 
