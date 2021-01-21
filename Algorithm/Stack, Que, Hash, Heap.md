@@ -119,10 +119,10 @@ stack = []
 while a > 0:
     lst.append(a%10)
     a = a//10
+    
 lst.reverse()
 stack.append(lst[0])    
 for i in range(1, len(lst)):
-
     while len(stack) != 0 and  lst[i] > stack[-1] and cnt > 0: 
         stack.pop()
         cnt -= 1
@@ -141,12 +141,11 @@ def solution(number, k):
     stack = []
     stack.append(lst[0])
     for i in range(1,len(lst)):
-
         while len(stack) >= 1 and stack[-1] < lst[i] and  k > 0:
             stack.pop()
             k -= 1
         stack.append(lst[i])
-        # print(stack)
+
     if k == 0:
         return ''.join(map(str,list(stack)))
     else :
