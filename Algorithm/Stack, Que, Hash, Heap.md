@@ -156,7 +156,10 @@ def solution(number, k):
 ### 정리 
 ------------------
 * ''.join()
-''.join(list(map(str,stack))) 개안외워짐 좀 외워라
+```python
+''.join(list(map(str,stack)))
+```
+개안외워짐 좀 외워라
 list의 ''.join(list_name)을 쓸 때, list의 모든 element들은 문자여야 한다. 즉 list에 저장된 값이 정수이거나 실수이면 이와 같은 에러가 뜰 것이다.
 * 숫자, 글자 쪼개기_외우기
 ```python
@@ -168,6 +171,3 @@ lst = list(map(int,list(number)))
 여기서 자꾸 'list out of range' 오류가 떴었음. 글고 오류가 문제가 아니라 i랑 i-1 or i+1 만 비교해서는 답대로 안나오는 알고리즘임.
     lst[i] > stack[-1]
 stack[-1]을 통해 문제 해결! pop으로 요소를 제거하는 스택 구조였기에 가능했음. 
-
-### 개안외워지는거
-
