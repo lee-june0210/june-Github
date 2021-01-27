@@ -31,3 +31,11 @@
 ### 5. 세션 계층
 ### 6. 표현 계층
 ### 7. 응용 계층
+
+
+
+##### 출처
+-------------
+https://blog.naver.com/PostView.nhn?blogId=pst8627&logNo=221670903384
+https://ko.wikipedia.org/wiki/OSI_%EB%AA%A8%ED%98%95
+https://shlee0882.tistory.com/110
