@@ -6,13 +6,16 @@
 ### OSI 7계층
 네트워크에서 통신이 일어나는 과정을 7단계로 나눈 것을 말한다. 계층을 나눈 이유는 통신이 일어나는 과정이 단계별로 파악할 수 있기 때문이다.
 
-<img src="https://user-images.githubusercontent.com/76678910/105954099-8ca77b00-60b7-11eb-8ce5-f4412afe12c7.PNG" width="50%" height="50%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+<img src="https://user-images.githubusercontent.com/76678910/105954099-8ca77b00-60b7-11eb-8ce5-f4412afe12c7.PNG" width="40%" height="40%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
 
 
-* 1. 물리계층
-* 2. 데이터 링크 계층
-* 3. 네트워크 계층
-* 4. 전송 계층
-* 5. 세션 계층
-* 6. 표현 계층
-* 7. 응용 계층
+* 물리 계층
+상위계층에서 내려온 데이터를 상대방까지 보낼 수 있도록 송신지와 목적지 같의 물리적 링크를 설정, 유지, 해제하기 위한 물리적, 전기적, 기능적 그리고 절차적인 특성을 규정한다. OSI 아키텍처에서 가장 복잡한 계층으로 간주된다.
+
+* 데이터 링크 계층
+노드들간의 데이터 전송을 담당한다. 상위 계층에서 내려온 데이터의 물리 주소와 다른 제어정보로 구성된 헤더를 앞부분에, 그리고 뒷부분에는 트레일러를 붙인다. 데이터 링크 계층의 프로토콜로는 문자 지향 방식은 _BCS(Binary Synchronous Communication)_ 절차와 비트 지향 방식인 _HDCL(High-level Data Link Control_ 절차가 있다. 
+* 네트워크 계층
+* 전송 계층
+* 세션 계층
+* 표현 계층
+* 응용 계층
