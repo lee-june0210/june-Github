@@ -1,7 +1,28 @@
-
 # 정렬, 완전 탐색
 <br>
 <br>
+
+
+## 요일
+
+```python
+a,b = map(int,input().split())
+
+month = [31,59,90,120,151,181,212,243,273,304,334]
+day = ["Thr","Fri", "Sat","Sun","Mon","Tue","Wed" ]
+
+if a == 1:
+    sum1 = b 
+if a > 12 or b >31:
+    print("ERROR")
+else :
+    #print(month[a-2])
+    sum1 = month[a-2]+ b
+    #print(sum1)
+    num = sum1%7
+    print(day[num])
+```
+
 
 
 ## 카펫
