@@ -11,7 +11,7 @@
 - [Computer Architecture](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Computer%20Architecture.md)
 - [Operating System](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Operating%20System.md)
 - [Database](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Database.md)
-- Network
+- [Network](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Network.md)
 - Data Structure
 - Software Engineering
 
