@@ -9,6 +9,44 @@
 
 ## 구명 보트!!!!!!!!!!!!!!!!!!!!!!!!! 정리!!!!!!!!!!!!1111
 
+```python
+def solution(people, limit):
+    people.sort()
+    cnt = 0
+    while people : # for문일 땐 out of range 에러를 해결할 수가 없었는데 while 하니깐 해결.
+        if len(people) == 1:
+            cnt += 1
+            break
+        if people[0] + people[-1] <= 100: # 맨앞에거랑 뒤에꺼만 더해서 조건을 만족한다는게 아직 이해가...
+            cnt += 1               # ㅋㅋㅋ limit 써야지ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 100ㅇㅈㄹ    
+            people.pop(0)
+            people.pop() # pop(-1)대신 pop()
+        else :
+            cnt += 1
+            people.pop()
+    return cnt
+```
+원래는 2중 for 문을 돌려서 
+pop으로 지워가며 list 내용 변화를 시킬때는 for문
+
+```python
+def solution(people, limit):
+    people.sort()
+    length=len(people)
+    heavy=length-1
+    cnt=0
+    light = 0
+    while(light<heavy):
+        print(people[light],people[heavy])
+        if people[light]+people[heavy]<=limit:
+            cnt += 1
+            light += 1
+            heavy -= 1
+        else:
+            heavy-=1
+    return length-cnt
+```
+
 ## 체육복
 
 ```python
