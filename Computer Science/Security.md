@@ -22,3 +22,12 @@
 * 암호화의 처리속도가 비밀키 기법에 비해 느림.
 
 <img src = "https://user-images.githubusercontent.com/76678910/106417494-8b9b9280-6497-11eb-9a93-c75d224e249c.PNG" height = 55% width = 55%></img>
+
+
+
+
+
+
+##### 출처
+---------------------------
+file:///C:/Users/jueun/Downloads/%EA%B8%88%EC%9C%B5%20%EB%B6%84%EC%95%BC%EC%9D%98%20%EC%95%88%EC%A0%84%ED%95%9C%20%EC%95%94%ED%98%B8%EC%9D%B4%EC%9A%A9%20%EB%B0%A9%EC%95%88.pdf
