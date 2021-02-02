@@ -134,6 +134,14 @@ redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면
         out.println("</html>");
     }
 ```
+
+### JDBC란? 
+* JDBC(Java Database Connectivity)의 정의
+	- 자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약
+	- 자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API
+	- SQL과 프로그래밍 언어의 통합 접근 중 한 형태
+
+
 <img src="https://user-images.githubusercontent.com/76678910/104908054-407a7d80-59c9-11eb-9c95-4339af860c07.png" width="60%" height="60%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
 
 보통은 이런 JDBC를 직접 사용하지 않고 프레임워크를 쓴다 하지만 이렇게 원리를 이해하고 사용하면 문제해결이 보다 용이해진다. 
