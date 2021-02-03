@@ -1,8 +1,67 @@
 # 스택, 큐, 해시, 힙
 
-## :mega:베스트 앨범
+## :mega:프린터
+
+```python
+def solution(p, l):
+    lst = []
+    cnt = 0
+    while p:
+        lst = list(p)
+        lst.sort()
+        max = lst[-1]
+        if p[0] < max : 
+            if l == 0:
+                l += len(p) # 저번에 구명보트에서 count로 lst안의 값 찾아나갔던 방식, 좋은 시도
+            p.append(p[0])
+        else :
+            cnt += 1
+            if l == 0:
+                return cnt # retrun은 여기에 한번만 넣어도 성공함
+        p.pop(0) # if와 else에 모두 해당돼서 돌아가는 행은 밖으로 빼서 중복을 없애줌
+        l -= 1
+```
 
 
+## :mega:구명보트
+
+```python
+def solution(people, limit):
+    people.sort()
+    cnt = 0
+    # for i in range(len(people)): # for 문 돌리는데서 out of range 문제를 해결할 수가 없었다.
+    while people :
+        #print(people)
+        if len(people) == 1:
+            cnt += 1
+            break
+        if people[0] + people[-1] <= 100: # 맨앞에거랑 뒤에꺼만 더해서 조건을 만족한다는게 아직 이해가...
+            cnt += 1                  # 쉬밸람아 limit 써야지ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 100ㅇㅈㄹ    
+            people.pop(0)
+            people.pop()
+        else :
+            cnt += 1
+            people.pop()
+    return cnt
+```
+
+```python
+def solution(people, limit):
+    people.sort()
+    length=len(people)
+    heavy=length-1
+    cnt=0
+    light = 0
+    while(light<heavy):
+        print(people[light],people[heavy])
+        if people[light]+people[heavy]<=limit:
+            cnt += 1
+            light += 1
+            heavy -= 1
+        else:
+            heavy-=1
+    return length-cnt
+```
 ## :mega:주식 가격
 
 ```python
