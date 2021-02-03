@@ -4,13 +4,10 @@
 
 ```python
 def solution(p, l):
-    lst = []
     cnt = 0
     while p:
-        lst = list(p)
-        lst.sort()
-        max = lst[-1] # max값이 갱신되는데, 새로운 lst를 만들어서 while문이 돌때마다 max값을 갱신해준거 좋은 시도.
-        if p[0] < max : 
+        max1 = max(p) # max값이 갱신되는데, while문이 돌때마다 max값을 갱신해준거 좋은 시도.
+        if p[0] < max1 : 
             if l == 0:
                 l += len(p) # 저번에 구명보트에서 count로 lst안의 값 찾아나갔던 방식, 좋은 시도
             p.append(p[0])
@@ -27,6 +24,13 @@ def solution(p, l):
 * enumerate를 사용하지 않고 count 형식으로 location을 쫓아감.
 * [1,2,3] 0 3 이라는 반례가 없었으면 해결이 어려웠을 것이다....... but, 반례있으니 금방 찾음! 잘할 수 있음.
 
+#### 참고
+-------------
+* max() 함수
+```python
+max1 = max(p)
+```
+이거면 lst 새로 만들어서 p를 복사한다음에 sort하고 [-1]로 찾아줄 필요가 없음. 저 한줄이면 끝남...
 
 ## :mega: 구명보트
 
