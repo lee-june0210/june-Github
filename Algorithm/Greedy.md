@@ -7,27 +7,29 @@
 <br>
 <br>
 
-## 구명 보트!!!!!!!!!!!!!!!!!!!!!!!!! 정리!!!!!!!!!!!!1111
+## :mega: 구명보트
 
 ```python
 def solution(people, limit):
     people.sort()
     cnt = 0
-    while people : # for문일 땐 out of range 에러를 해결할 수가 없었는데 while 하니깐 해결.
+    # for i in range(len(people)): # for 문 돌리는데서 out of range 문제를 해결할 수가 없었다. 
+    while people :                  # 하지만 while 문 쓰니 out of range 문제 바로 해결!
+        #print(people)
         if len(people) == 1:
             cnt += 1
             break
-        if people[0] + people[-1] <= 100: # 맨앞에거랑 뒤에꺼만 더해서 조건을 만족한다는게 아직 이해가...
-            cnt += 1               # ㅋㅋㅋ limit 써야지ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 100ㅇㅈㄹ    
+        if people[0] + people[-1] <= 100: # 맨앞에거랑 뒤에꺼만 더해서 조건을 만족한다는게 아직 이해가 안가는 부분이긴함.....
+            cnt += 1                  # limit 써야지ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 100ㅋㅋㅋㅋㅋ 앞으로 조심합시다!
             people.pop(0)
-            people.pop() # pop(-1)대신 pop()
+            people.pop()
         else :
             cnt += 1
             people.pop()
     return cnt
 ```
-원래는 2중 for 문을 돌려서 
-pop으로 지워가며 list 내용 변화를 시킬때는 for문
+하지만 효율성 1문제를 통과를 못했다. 참고 정보 보니, pop(),remove(),del()은 모두 효율성 오류로 처리하는 듯했다.
+도대체 저 내장함수 안쓰고도 해결하는 방법이 뭐가 있나 했더니 _cnt += 1 cnt -= 1_ 로 삭제 위치를 조정하고 다녔다. 
 
 ```python
 def solution(people, limit):
@@ -36,7 +38,7 @@ def solution(people, limit):
     heavy=length-1
     cnt=0
     light = 0
-    while(light<heavy):
+    while(light<heavy): # 그래도 얘는 이해못하겠다.....
         print(people[light],people[heavy])
         if people[light]+people[heavy]<=limit:
             cnt += 1
