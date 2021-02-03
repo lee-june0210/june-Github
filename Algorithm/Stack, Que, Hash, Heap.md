@@ -1,6 +1,6 @@
 # 스택, 큐, 해시, 힙
 
-## :mega:프린터
+## :mega: 프린터
 
 ```python
 def solution(p, l):
