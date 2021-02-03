@@ -32,47 +32,7 @@ max1 = max(p)
 ```
 이거면 lst 새로 만들어서 p를 복사한다음에 sort하고 [-1]로 찾아줄 필요가 없음. 저 한줄이면 끝남...
 
-## :mega: 구명보트
 
-```python
-def solution(people, limit):
-    people.sort()
-    cnt = 0
-    # for i in range(len(people)): # for 문 돌리는데서 out of range 문제를 해결할 수가 없었다. 
-    while people :                  # 하지만 while 문 쓰니 out of range 문제 바로 해결!
-        #print(people)
-        if len(people) == 1:
-            cnt += 1
-            break
-        if people[0] + people[-1] <= 100: # 맨앞에거랑 뒤에꺼만 더해서 조건을 만족한다는게 아직 이해가 안가는 부분이긴함.....
-            cnt += 1                  # limit 써야지ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 100ㅋㅋㅋㅋㅋ 앞으로 조심합시다!
-            people.pop(0)
-            people.pop()
-        else :
-            cnt += 1
-            people.pop()
-    return cnt
-```
-하지만 효율성 1문제를 통과를 못했다. 참고 정보 보니, pop(),remove(),del()은 모두 효율성 오류로 처리하는 듯했다.
-도대체 저 내장함수 안쓰고도 해결하는 방법이 뭐가 있나 했더니 _cnt += 1 cnt -= 1_ 로 삭제 위치를 조정하고 다녔다. 
-
-```python
-def solution(people, limit):
-    people.sort()
-    length=len(people)
-    heavy=length-1
-    cnt=0
-    light = 0
-    while(light<heavy): # 그래도 얘는 이해못하겠다.....
-        print(people[light],people[heavy])
-        if people[light]+people[heavy]<=limit:
-            cnt += 1
-            light += 1
-            heavy -= 1
-        else:
-            heavy-=1
-    return length-cnt
-```
 ## :mega:주식 가격
 
 ```python
