@@ -16,6 +16,10 @@ Java // or /* */
 
 "각각 경우에 따라서 주석이 하는 역할 >> 주석이 주석일 때에  위치가 다를 수 있다."를 기억.
 
+#### JSP의 내장객체
+
+<img src ="https://user-images.githubusercontent.com/76678910/106701837-ace0b800-662a-11eb-9d98-e7d5ea027d29.png" ></img>
+
 JavaScript의 기본문법을 이해한다.
 DOM, Browser Event, Ajax이 각각 무엇인지 이해하고, 이를 활용해 웹화면을 제어할 수 있다.
 JSP의 라이프사이클을 이해하고 redirect & forward 와 scope를 이해하고 사용할 수 있다. 
