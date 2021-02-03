@@ -3,7 +3,7 @@
 <br>
 
 
-## 요일
+## :mega: 요일
 
 ```python
 a,b = map(int,input().split())
@@ -16,16 +16,15 @@ if a == 1:
 if a > 12 or b >31:
     print("ERROR")
 else :
-    #print(month[a-2])
     sum1 = month[a-2]+ b
-    #print(sum1)
     num = sum1%7
     print(day[num])
 ```
+2월의 29,30 달과 30일밖에 없는 달은 해결하지 못했다. 
+원래는 day부를때랑 month 부를때 def 함수를 만들어서 return값으로 처리했는데, 이렇게 해도 나온다. 최대한 def()함수 사용은 자제하는게 효율성면에서 좋다.
 
 
-
-## 카펫
+## :mega: 카펫
 ```python
 def divide(num):
     arr = [] 
@@ -65,7 +64,7 @@ def solution(brown, yellow):
 함수는 쓰면 확실히 속도가 느려진다. 
 
 
-## 전화번호부
+## :mega: 전화번호부
 ```python
 def solution(phone_book):
 
@@ -85,7 +84,7 @@ def solution(phone_book):
 접두어 일치 찾아주는 함수
 _str.startswith('str')_ 하면 일치 여부에 따라 True와 False를 반환한다.
 
-## 완주하지 못한 선수
+## :mega: 완주하지 못한 선수
 
 ```python
 participant = ["aeo", "kiki", "eden"] 
@@ -117,7 +116,7 @@ else :
 ```
 returnd을 이렇게 바로 뽑아내도됨
 
-## 단어찾기 
+## :mega: 단어찾기 
 
 ```python
 n = int(input())
@@ -143,7 +142,7 @@ list(set(lst) - set(nxt_lst))
 2. [] -> {} 집합으로 형태변환
 3. set()-set() 빼기 가능; 없는 요소만 남음
 
-## 모의고사 
+## :mega: 모의고사 
 
 ```python
 lst1 = [1,2,3,4,5]
