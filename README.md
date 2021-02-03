@@ -13,7 +13,7 @@
 - [Database](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Database.md)
 - [Network](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Network.md)
 - [Security](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Security.md)
-- Data Structure
+- [Data Structure](https://github.com/lee-june0210/june-Github/blob/main/Computer%20Science/Data%20Structure.md)
 - Software Engineering
 
 ## :zap: 웹 프로그래밍(풀스택)
