@@ -23,6 +23,22 @@ else :
 2월의 29,30 달과 30일밖에 없는 달은 해결하지 못했다. 
 원래는 day부를때랑 month 부를때 def 함수를 만들어서 return값으로 처리했는데, 이렇게 해도 나온다. 최대한 def()함수 사용은 자제하는게 효율성면에서 좋다.
 
+## :mega: 완전수
+
+```python
+a,b = map(int,(input().split())) # 구름환경에서는 이렇게 수를 받아서 처리한다. 
+
+lst1 = []
+for i in range(a,b+1): # 당연하게 a,b사이일꺼라고 생각했는데...내 착각이었다. 1부터 6일수도 있는거자나  방심하지 않기
+	lst = []
+	for j in range(1,i):
+		if i%j == 0:
+			lst.append(j)
+	if sum(lst) == i:
+		lst1.append(i)
+for i in lst1:
+	print(i, end=' ') # lst안에 있는 값 꺼내오기......능숙해.......
+```
 
 ## :mega: 카펫
 ```python
