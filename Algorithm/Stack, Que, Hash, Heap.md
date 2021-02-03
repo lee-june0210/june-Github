@@ -9,7 +9,7 @@ def solution(p, l):
     while p:
         lst = list(p)
         lst.sort()
-        max = lst[-1]
+        max = lst[-1] # max값이 갱신되는데, 새로운 lst를 만들어서 while문이 돌때마다 max값을 갱신해준거 좋은 시도.
         if p[0] < max : 
             if l == 0:
                 l += len(p) # 저번에 구명보트에서 count로 lst안의 값 찾아나갔던 방식, 좋은 시도
@@ -22,6 +22,11 @@ def solution(p, l):
         l -= 1
 ```
 
+### 정리 
+-------------
+* enumerate를 사용하지 않고 count 형식으로 location을 쫓아감.
+* [1,2,3] 0 3 이라는 반례가 없었으면 해결이 어려웠을 것이다....... but, 반례있으니 금방 찾음! 잘할 수 있음.
+
 
 ## :mega:구명보트
 
@@ -29,14 +34,14 @@ def solution(p, l):
 def solution(people, limit):
     people.sort()
     cnt = 0
-    # for i in range(len(people)): # for 문 돌리는데서 out of range 문제를 해결할 수가 없었다.
-    while people :
+    # for i in range(len(people)): # for 문 돌리는데서 out of range 문제를 해결할 수가 없었다. 
+    while people :                  # 하지만 while 문 쓰니 out of range 문제 바로 해결!
         #print(people)
         if len(people) == 1:
             cnt += 1
             break
-        if people[0] + people[-1] <= 100: # 맨앞에거랑 뒤에꺼만 더해서 조건을 만족한다는게 아직 이해가...
-            cnt += 1                  # 쉬밸람아 limit 써야지ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 100ㅇㅈㄹ    
+        if people[0] + people[-1] <= 100: # 맨앞에거랑 뒤에꺼만 더해서 조건을 만족한다는게 아직 이해가 안가는 부분이긴함.....
+            cnt += 1                  # limit 써야지ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 100ㅋㅋㅋㅋㅋ 앞으로 조심합시다!
             people.pop(0)
             people.pop()
         else :
@@ -44,6 +49,8 @@ def solution(people, limit):
             people.pop()
     return cnt
 ```
+하지만 효율성 1문제를 통과를 못했다. 참고 정보 보니, pop(),remove(),del()은 모두 효율성 오류로 처리하는 듯했다.
+도대체 
 
 ```python
 def solution(people, limit):
