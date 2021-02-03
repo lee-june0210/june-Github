@@ -49,7 +49,7 @@ def solution(people, limit):
     return length-cnt
 ```
 
-## 체육복
+## :mega: 체육복
 
 ```python
 
