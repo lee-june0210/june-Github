@@ -28,7 +28,7 @@ def solution(p, l):
 * [1,2,3] 0 3 이라는 반례가 없었으면 해결이 어려웠을 것이다....... but, 반례있으니 금방 찾음! 잘할 수 있음.
 
 
-## :mega:구명보트
+## :mega: 구명보트
 
 ```python
 def solution(people, limit):
@@ -50,7 +50,7 @@ def solution(people, limit):
     return cnt
 ```
 하지만 효율성 1문제를 통과를 못했다. 참고 정보 보니, pop(),remove(),del()은 모두 효율성 오류로 처리하는 듯했다.
-도대체 
+도대체 저 내장함수 안쓰고도 해결하는 방법이 뭐가 있나 했더니 _cnt += 1 cnt -= 1_ 로 삭제 위치를 조정하고 다녔다. 
 
 ```python
 def solution(people, limit):
@@ -59,7 +59,7 @@ def solution(people, limit):
     heavy=length-1
     cnt=0
     light = 0
-    while(light<heavy):
+    while(light<heavy): # 그래도 얘는 이해못하겠다.....
         print(people[light],people[heavy])
         if people[light]+people[heavy]<=limit:
             cnt += 1
