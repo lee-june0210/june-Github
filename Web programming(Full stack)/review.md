@@ -61,6 +61,23 @@ Maven으로 생성된 프로젝트의 경우 자바 소스는 src/main/java 폴�
 프로그램 로직 수행은 Servlet에서, 결과 출력은 JSP에서 하는 것이 유리하다.
 JSP에서는 되도록 자바 코드를 줄이는 것이 좋아요. 이를 위해서 제공되는 문법이 JSTL과 EL이에요.
 
+### 리다이렉트
+
+* 리다이렉트는 HTTP프로토콜로 정해진 규칙이다.
+* 서버는 클라이언트의 요청에 대해 특정 URL로 이동을 요청할 수 있다. 이를 리다이렉트라고 한다.
+* 서버는 클라이언트에게 HTTP 상태코드 302로 응답하는데 이때 헤더 내 Location 값에 이동할 URL 을 추가한다. 클라이언트는 리다이렉션 응답을 받게 되면 헤더(Location)에 포함된 URL로 재요청을 보내게 된다. 이때 브라우저의 주소창은 새 URL로 바뀌게 된다..
+* 클라이언트는 서버로부터 받은 상태 값이 302이면 Location헤더값으로 재요청을 보내게 된다. 이때 브라우저의 주소창은 전송받은 URL로 바뀌게 된다.
+* 서블릿이나 JSP는 리다이렉트하기 위해 HttpServletResponse 클래스의 sendRedirect() 메소드를 사용한다.
+
+### forward란?
+
+웹 브라우저에서 Servlet1에게 요청을 보냄
+Servlet1은 요청을 처리한 후, 그 결과를 HttpServletRequest에 저장
+Servlet1은 결과가 저장된 HttpServletRequest와 응답을 위한 HttpServletResponse를 같은 웹 어플리케이션 안에 있는 Servlet2에게 전송(forward)
+Servlet2는 Servlet1으로 부터 받은 HttpServletRequest와 HttpServletResponse를 이용하여 요청을 처리한 후 웹 브라우저에게 결과를 전송
+
+<img src = "https://user-images.githubusercontent.com/76678910/106856801-68c0e680-6702-11eb-9a6c-864fd8a5a6e6.png"> </img>
+
 리다이렉션을 하는 이유
 HTTP 애플리케이션은 언제나 아래 세가지를 원하기 때문에 리다이렉션은 현대의 웹에서는 불가피합니다.
 
@@ -206,23 +223,6 @@ Web API 디자인 가이드
 
 URI는 정보의 자원을 표현해야 합니다.
 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현합니다.
-
-### 리다이렉트
-
-* 리다이렉트는 HTTP프로토콜로 정해진 규칙이다.
-* 서버는 클라이언트의 요청에 대해 특정 URL로 이동을 요청할 수 있다. 이를 리다이렉트라고 한다.
-* 서버는 클라이언트에게 HTTP 상태코드 302로 응답하는데 이때 헤더 내 Location 값에 이동할 URL 을 추가한다. 클라이언트는 리다이렉션 응답을 받게 되면 헤더(Location)에 포함된 URL로 재요청을 보내게 된다. 이때 브라우저의 주소창은 새 URL로 바뀌게 된다..
-* 클라이언트는 서버로부터 받은 상태 값이 302이면 Location헤더값으로 재요청을 보내게 된다. 이때 브라우저의 주소창은 전송받은 URL로 바뀌게 된다.
-* 서블릿이나 JSP는 리다이렉트하기 위해 HttpServletResponse 클래스의 sendRedirect() 메소드를 사용한다.
-
-### forward란?
-
-웹 브라우저에서 Servlet1에게 요청을 보냄
-Servlet1은 요청을 처리한 후, 그 결과를 HttpServletRequest에 저장
-Servlet1은 결과가 저장된 HttpServletRequest와 응답을 위한 HttpServletResponse를 같은 웹 어플리케이션 안에 있는 Servlet2에게 전송(forward)
-Servlet2는 Servlet1으로 부터 받은 HttpServletRequest와 HttpServletResponse를 이용하여 요청을 처리한 후 웹 브라우저에게 결과를 전송
-
-<img src = "https://user-images.githubusercontent.com/76678910/106856801-68c0e680-6702-11eb-9a6c-864fd8a5a6e6.png"> </img>
 
 
 ##  첫번째 프로젝트 시작_210101
