@@ -202,6 +202,12 @@ REST API란 핵심 컨텐츠 및 기능을 외부 사이트에서 활용할 수 
 API는  Application Programming Interface의 약자입니다.
 “API(Application Programming Interface, 응용 프로그램 프로그래밍 인터페이스)는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻합니다.
 
+Web API 디자인 가이드
+
+URI는 정보의 자원을 표현해야 합니다.
+자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현합니다.
+
+
 
 ##  첫번째 프로젝트 시작_210101
 
