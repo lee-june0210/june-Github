@@ -215,6 +215,15 @@ URI는 정보의 자원을 표현해야 합니다.
 * 클라이언트는 서버로부터 받은 상태 값이 302이면 Location헤더값으로 재요청을 보내게 된다. 이때 브라우저의 주소창은 전송받은 URL로 바뀌게 된다.
 * 서블릿이나 JSP는 리다이렉트하기 위해 HttpServletResponse 클래스의 sendRedirect() 메소드를 사용한다.
 
+### forward란?
+
+웹 브라우저에서 Servlet1에게 요청을 보냄
+Servlet1은 요청을 처리한 후, 그 결과를 HttpServletRequest에 저장
+Servlet1은 결과가 저장된 HttpServletRequest와 응답을 위한 HttpServletResponse를 같은 웹 어플리케이션 안에 있는 Servlet2에게 전송(forward)
+Servlet2는 Servlet1으로 부터 받은 HttpServletRequest와 HttpServletResponse를 이용하여 요청을 처리한 후 웹 브라우저에게 결과를 전송
+
+<img src = "https://user-images.githubusercontent.com/76678910/106856801-68c0e680-6702-11eb-9a6c-864fd8a5a6e6.png"> </img>
+
 
 ##  첫번째 프로젝트 시작_210101
 
