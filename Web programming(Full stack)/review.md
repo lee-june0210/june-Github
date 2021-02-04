@@ -42,6 +42,7 @@ Maven을 사용한다는 것은 어쩌면 이러한 관습 즉 CoC에 대해서 
 
 
 * 장점
+
 Maven을 사용할 경우, 굉장히 편리한 점들이 많습니다.
 많은 사람이 손꼽는 장점 중에는 편리한 의존성 라이브러리 관리가 있습니다.
 앞에서 JSTL을 학습할 때, 몇 가지 파일을 다운로드 하여 /WEB-INF/lib폴더에 복사하여 사용했었습니다.
@@ -61,6 +62,15 @@ Maven으로 생성된 프로젝트의 경우 자바 소스는 src/main/java 폴�
 프로그램 로직 수행은 Servlet에서, 결과 출력은 JSP에서 하는 것이 유리하다.
 JSP에서는 되도록 자바 코드를 줄이는 것이 좋아요. 이를 위해서 제공되는 문법이 JSTL과 EL이에요.
 
+### redirect vs forward
+
+redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면 이 서버는 어떤 일들을 처리하고 다시 어떻게 하냐면클라이언트한테 새로운 요청할 곳을 알려주면서 이걸로 다시 요청해요. 라고 주는 것이 리다이렉트에요.그래서 리다이렉트의 결과는 실제 실행한 다음에 url 주소가 바뀌었었던 거 혹시 기억하실까요? 그런데 포워드는요. 클라이언트는 요청을 보냈어요. 그런데 서버쪽에서 그 요청에 대해서 혼자 처리하는 것이 아니라 다른 누군가. back한테 처리를 맡기는 거죠. 이런 것을 포워드라고 하는데 이때 클라이언트는 이 서블릿, 요청받은 Servlet 1이 혼자서 다 처리해서 응답을 했는지 아니면 다른 누군가한테 부탁해서 처리를 했는지.
+여기까지는 전혀 알 필요가 없어요.
+그래서 포워드가 실행된 다음에는 url이 바뀌지 않아요. 
+
+실제 클라이언ㅌ가 서버한테 요청을 하면 반드시 request와 response가 존재했다. was는 요청을 담당하고 있는 responces객체를 만드어서 요청이 들어와서 완료될때까지 계속 
+forward는 저 객체가 1번 만들어지는 건데 redirect는 여러번 요청이 들어가서 각각 request와 response가 만들어진다.
+
 ### 리다이렉트
 
 * 리다이렉트는 HTTP프로토콜로 정해진 규칙이다.
@@ -69,23 +79,14 @@ JSP에서는 되도록 자바 코드를 줄이는 것이 좋아요. 이를 위�
 * 클라이언트는 서버로부터 받은 상태 값이 302이면 Location헤더값으로 재요청을 보내게 된다. 이때 브라우저의 주소창은 전송받은 URL로 바뀌게 된다.
 * 서블릿이나 JSP는 리다이렉트하기 위해 HttpServletResponse 클래스의 sendRedirect() 메소드를 사용한다.
 
-### forward란?
-
-웹 브라우저에서 Servlet1에게 요청을 보냄
-Servlet1은 요청을 처리한 후, 그 결과를 HttpServletRequest에 저장
-Servlet1은 결과가 저장된 HttpServletRequest와 응답을 위한 HttpServletResponse를 같은 웹 어플리케이션 안에 있는 Servlet2에게 전송(forward)
-Servlet2는 Servlet1으로 부터 받은 HttpServletRequest와 HttpServletResponse를 이용하여 요청을 처리한 후 웹 브라우저에게 결과를 전송
-
-<img src = "https://user-images.githubusercontent.com/76678910/106856801-68c0e680-6702-11eb-9a6c-864fd8a5a6e6.png"> </img>
-
 리다이렉션을 하는 이유
 HTTP 애플리케이션은 언제나 아래 세가지를 원하기 때문에 리다이렉션은 현대의 웹에서는 불가피합니다.
 
 신뢰할 수 있는 HTTP 트랜잭션의 수행
 지연 최소화
 네트워크 대역폭 절약
-위와 같은 이유들 때문에, 웹 콘텐츠는 흔히 여러장소에 배포하게 됩니다.
 
+위와 같은 이유들 때문에, 웹 콘텐츠는 흔히 여러장소에 배포하게 됩니다.
 이렇게 하면 한곳에서 실패한 경우 다른 곳을 이용할 수 있으므로 신뢰성 이 개선됩니다.
 또한 클라이언트가 보다 가까운 리소스에 접근할 수 있게 되어 응답시간도 줄여줍니다.
 또한 목적지 서버가 분산되므로 네트워크 혼잡도도 줄어들게 됩니다.
@@ -101,11 +102,20 @@ HTTP 애플리케이션은 언제나 아래 세가지를 원하기 때문에 리
 3. 긴 요청에 대한 일시적인 응답
 
 
-redirect는요. 클라이언트가 서버한테 요청을 보냈고요.그러면 이 서버는 어떤 일들을 처리하고 다시 어떻게 하냐면클라이언트한테 새로운 요청할 곳을 알려주면서 이걸로 다시 요청해요.
 
-라고 주는 것이 리다이렉트에요.그래서 리다이렉트의 결과는 실제 실행한 다음에 url 주소가 바뀌었었던 거 혹시 기억하실까요? 그런데 포워드는요. 클라이언트는 요청을 보냈어요. 그런데 서버쪽에서 그 요청에 대해서 혼자 처리하는 것이 아니라 다른 누군가. back한테 처리를 맡기는 거죠. 이런 것을 포워드라고 하는데 이때 클라이언트는 이 서블릿, 요청받은 Servlet 1이 혼자서 다 처리해서 응답을 했는지 아니면 다른 누군가한테 부탁해서 처리를 했는지.
-여기까지는 전혀 알 필요가 없어요.
-그래서 포워드가 실행된 다음에는 url이 바뀌지 않아요.
+
+### forward란?
+
+웹 브라우저에서 Servlet1에게 요청을 보냄
+Servlet1은 요청을 처리한 후, 그 결과를 HttpServletRequest에 저장
+Servlet1은 결과가 저장된 HttpServletRequest와 응답을 위한 HttpServletResponse를 같은 웹 어플리케이션 안에 있는 Servlet2에게 전송(forward)
+Servlet2는 Servlet1으로 부터 받은 HttpServletRequest와 HttpServletResponse를 이용하여 요청을 처리한 후 웹 브라우저에게 결과를 전송
+
+<img src = "https://user-images.githubusercontent.com/76678910/106856801-68c0e680-6702-11eb-9a6c-864fd8a5a6e6.png"> </img>
+
+
+
+
 
 ```java
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
