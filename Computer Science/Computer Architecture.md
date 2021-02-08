@@ -2,20 +2,12 @@
 ## Computer Architecture
 
 
+### 기억장치 접근시간
 
 
+### 캐시 메모리 참조
 
-
-
-
-
-### 6. 기억장치 접근시간
-
-동작 원리
-
-캐시 메모리 참조
-
-<img scr = "https://user-images.githubusercontent.com/76678910/107191743-f9affe80-6a2f-11eb-8b92-a666e9e0b660.PNG"> </img>
+<img src = "https://user-images.githubusercontent.com/76678910/107191743-f9affe80-6a2f-11eb-8b92-a666e9e0b660.PNG"> </img>
 
 CPU는 데이터 처리를 위해 메모리와 끊임없이 데이터를 주고 받는다. 이 때 CPU에 비해 메모리는 속도가 느리기 때문에 메모리에 접근할 때 CPU는 효율적으로 사용되지 못한다.
 
@@ -35,7 +27,7 @@ CPU는 캐시 메모리 > 메모리 > 보조기억장치 순으로 접근
 
 TLB 메모리 참조
 
-<img src="https://user-images.githubusercontent.com/76678910/107175267-bcd40f80-6a0f-11eb-813f-0a5a4583c5cd.jpg" width = "70%" height = "70%"> </img>
+<img src="https://user-images.githubusercontent.com/76678910/107191746-fae12b80-6a2f-11eb-9f51-f65356600457.png" width = "70%" height = "70%"> </img>
 
 TLB 메모리는 일종의 페이지 테이블의 캐시라고 생각
 
@@ -48,7 +40,7 @@ TLB 메모리는 일종의 페이지 테이블의 캐시라고 생각
 알아낸 실제 주소를 사용 캐시로 가서 페이지가 있는지 없는지 비교
 
 
- 
+<img src="https://user-images.githubusercontent.com/76678910/107191754-fd438580-6a2f-11eb-99d4-24f5cf536a1e.PNG"> </img>
 
 1번 : BEST한 경우. TLB가 hit이므로 페이지 테이블을 볼 필요가 없다. (페이지 테이블을 접근하는 것은 cpu의 가상주소를 실제 주소로 변환하기 위함인데, TLB에 이미 실제 주소가 있기 때문) 즉, 메인 메모리 접근이 필요가 없다. Cache hit이므로 TLB에 의해 가상 주소 → 실제 주소, 이 실제주소를 가지고 cache에 접근해 페이지를 접근한다.
 
