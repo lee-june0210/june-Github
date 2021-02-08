@@ -75,6 +75,7 @@ Web API를 이해한다.
 포워딩이나 리다이렉트를 하더라도 없어지지 
 * Page : 페이지 내에서 지역변수처럼 사용
 포워드를 할때 pageContext는 없어진다 
+.setAttribute() .getAttribute()
 
 
 >210114
