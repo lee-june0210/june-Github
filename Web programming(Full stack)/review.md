@@ -70,8 +70,12 @@ Web API를 이해한다.
 
 
 * Application : 웹 어플리케이션이 시작되고 종료될 때까지 변수가 유지되는 경우 사용
+Application.setAttribute() Application.getAttribute()
 * Session : 웹 브라우저 별로 변수가 관리되는 경우 사용
+Session.setAttribute() Session.getAttribute()
+ex) 로그인, 장바구니 정보
 * Request : http요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수가 유지되는 경우 사용
+Request.setAttribute() Request.getAttribute()
 포워딩이나 리다이렉트를 하더라도 없어지지 
 http 요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수값을 유지하고자 할 경우 사용한다.
 HttpServletRequest 객체를 사용한다.
