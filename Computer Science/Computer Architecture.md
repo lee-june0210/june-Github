@@ -7,7 +7,7 @@
 
 ### 캐시 메모리 참조
 
-<img src = "https://user-images.githubusercontent.com/76678910/107191743-f9affe80-6a2f-11eb-8b92-a666e9e0b660.PNG"> </img>
+<img src = "https://user-images.githubusercontent.com/76678910/107191751-fc125880-6a2f-11eb-9a8d-f3ab5def09da.png" width = "70%" height = "70%"> </img>
 
 CPU는 데이터 처리를 위해 메모리와 끊임없이 데이터를 주고 받는다. 이 때 CPU에 비해 메모리는 속도가 느리기 때문에 메모리에 접근할 때 CPU는 효율적으로 사용되지 못한다.
 
