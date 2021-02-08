@@ -38,13 +38,11 @@ JSP주석의 예시
 자바주석의 예시
 ```
 //주석
-
 /*주석
-
 여러 줄에 걸친 주석이다.
-
 */
 ```
+
 HTMl <!-- --> 
 JSP <%-- --> 
 Java // or /* */ 
@@ -64,14 +62,17 @@ Maven을 이해하고 Maven을 이용한 웹 어플리케이션을 작성할 수
 JDBC 프로그래밍을 할 수 있다. 
 Web API를 이해한다. 
 
+> 210208
 #### SCOPE
 
-<img scr = "https://user-images.githubusercontent.com/76678910/107175267-bcd40f80-6a0f-11eb-813f-0a5a4583c5cd.jpg" width = "60%" height = "60%" > </img>
 
-Application : 웹 어플리케이션이 시작되고 종료될 때까지 변수가 유지되는 경우 사용
-Session : 웹 브라우저 별로 변수가 관리되는 경우 사용
-Request : http요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수가 유지되는 경우 사용
-Page : 페이지 내에서 지역변수처럼 사용
+<img src = "https://user-images.githubusercontent.com/76678910/107175267-bcd40f80-6a0f-11eb-813f-0a5a4583c5cd.jpg" height = "40%" width = "40%"> </img>
+
+
+* Application : 웹 어플리케이션이 시작되고 종료될 때까지 변수가 유지되는 경우 사용
+* Session : 웹 브라우저 별로 변수가 관리되는 경우 사용
+* Request : http요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수가 유지되는 경우 사용
+* Page : 페이지 내에서 지역변수처럼 사용
 
 
 >210114
@@ -145,9 +146,6 @@ HTTP 애플리케이션은 언제나 아래 세가지를 원하기 때문에 리
 2. 안전하지 않은 요청에 대한 일시적인 응답
 3. 긴 요청에 대한 일시적인 응답
 
-
-
-
 ### forward란?
 
 웹 브라우저에서 Servlet1에게 요청을 보냄
@@ -155,11 +153,7 @@ Servlet1은 요청을 처리한 후, 그 결과를 HttpServletRequest에 저장
 Servlet1은 결과가 저장된 HttpServletRequest와 응답을 위한 HttpServletResponse를 같은 웹 어플리케이션 안에 있는 Servlet2에게 전송(forward)
 Servlet2는 Servlet1으로 부터 받은 HttpServletRequest와 HttpServletResponse를 이용하여 요청을 처리한 후 웹 브라우저에게 결과를 전송
 
-<img src = "https://user-images.githubusercontent.com/76678910/106856801-68c0e680-6702-11eb-9a6c-864fd8a5a6e6.png"> </img>
-
-
-
-
+<img src = "https://user-images.githubusercontent.com/76678910/106856801-68c0e680-6702-11eb-9a6c-864fd8a5a6e6.png" height = "40%" width = "40%"> </img>
 
 ```java
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
