@@ -73,6 +73,14 @@ Web API를 이해한다.
 * Session : 웹 브라우저 별로 변수가 관리되는 경우 사용
 * Request : http요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수가 유지되는 경우 사용
 포워딩이나 리다이렉트를 하더라도 없어지지 
+http 요청을 WAS가 받아서 웹 브라우저에게 응답할 때까지 변수값을 유지하고자 할 경우 사용한다.
+HttpServletRequest 객체를 사용한다.
+JSP에서는 request 내장 변수를 사용한다.
+서블릿에서는 HttpServletRequest 객체를 사용한다.
+값을 저장할 때는 request 객체의 setAttribute()메소드를 사용한다.
+값을 읽어 들일 때는 request 객체의 getAttribute()메소드를 사용한다.
+forward 시 값을 유지하고자 사용한다.
+앞에서 forward에 대하여 배울 때 forward 하기 전에 request 객체의 setAttribute() 메소드로 값을 설정한 후, 서블릿이나 jsp에게 결과를 전달하여 값을 출력하도록 하였는데 이렇게 포워드 되는 동안 값이 유지되는 것이 Request scope를 이용했다고 합니다.
 * Page : 페이지 내에서 지역변수처럼 사용
 포워드를 할때 pageContext는 없어진다 
 PageContext.setAttribute() PageContext.getAttribute()
