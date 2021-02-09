@@ -99,6 +99,12 @@ like 지역변수
 2. 빨강불인 애들 각각 프로젝트 preferences가서 JAVA BUILD PATH 지우고 다시 설치
 3. 그래도 안되면 .m2 폴더 삭제하고 update project 한다음에 다시 1번부터 해보기
 
+>210209
+이유 없는 빨간 엑스
+-> 다이나믹 웹 머시기 버전 문제일 가능성있음
+navigator가서 ~~~core.xml 누르고 java랑 다이나믹 웹 머시기 각각 1.8(jdk버전 맞춘거임) 3.1로 설치한다음 
+Maven 프로젝트 업데이트 해주고
+다시 해당 프로젝트 proference?가서 Build Path랑 Facet 재설정 해주면 엑박없어짐
 
 >210114
 * Maven이란?
