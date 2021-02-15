@@ -5,7 +5,7 @@
 ### 기억장치 접근시간
 
 
-### 캐시 메모리 참조
+#### 캐시 메모리 참조
 
 <img src = "https://user-images.githubusercontent.com/76678910/107191751-fc125880-6a2f-11eb-9a8d-f3ab5def09da.png" width = "70%" height = "70%"> </img>
 
