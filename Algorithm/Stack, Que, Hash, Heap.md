@@ -40,31 +40,27 @@ def solution(genres, plays):
 -------------
 * for and if in one line
 ```
-for i in v:     # 기존 
+for i in v:         # 기존 
     print(i)    
     
-[i for i in v]  # 한줄로 했을때
+[i for i in v]      # 한줄로 했을때
 ```
-for i in v:
+```
+for i in v:         # 기존
     if i == 12:
         print(i)
-```
-기존
-```
-[i for i in v if i == 12 ]
-```
-```
-for i in v:
-if i == 12:
-print(i)
-else:
-print("No")
-```
-기존
-```
-[i if i==12 else "No" for i in v]
-```
 
+[i for i in v if i == 12 ]  # 한줄로 했을 때
+```
+```
+for i in v:         # 기존
+    if i == 12:
+        print(i)
+    else:
+        print("No")
+
+[i if i==12 else "No" for i in v] # 한줄로 했을 때
+```
 * dict
 ```
 d.keys()           // 딕셔너리의 key 조회
@@ -110,6 +106,7 @@ def solution(p, l):
 #### 참고
 -------------
 * max() 함수
+
 ```python
 max1 = max(p)
 ```
