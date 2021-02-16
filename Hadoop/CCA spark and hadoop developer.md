@@ -48,6 +48,7 @@ RDD는 스파크에서 기본적인 데이터 단위라고 볼 수 있다.
 * saveAsTextFile(path)	데이터셋을 텍스트 파일로 지정한 위치에 저장
 * countByKey()	키를 기준으로 카운트 반환
 * foreach(func)	데이터셋의 각 엘리먼트를 _func_로 처리. 보통 Accmulator와 함께 사용
+* sc.parallelize() 파이썬 리스트를 스파크 클러스터로 가져오는 함수
 
 
 
