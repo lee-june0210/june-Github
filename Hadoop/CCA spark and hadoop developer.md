@@ -40,6 +40,14 @@ RDD는 스파크에서 기본적인 데이터 단위라고 볼 수 있다.
 * groupByKey([numPartitions])	키를 기준으로 그룹핑 처리. (K, V) 쌍을 처리하여 (K, Iterable)로 반환
 * reduceByKey(func, [numPartitions])	키를 기준으로 주어진 _func_로 처리된 작업 결과를 (K, V)로 반환
 * sortByKey([ascending], [numPartitions])	키를 기준으로 정렬
+* reduce(func)	_func_를 이용하여 데이터를 집계(두 개의 인수를 받아서 하나를 반환). 병렬처리가 가능해야 함
+* collect()	처리 결과를 배열로 반환. 필터링 등 작은 데이터 집합을 반환하는데 유용
+* count()	데이터셋의 개수 반환
+* first()	데이터셋의 첫번째 아이템 반환(take(1)과 유사)
+* take(n)	데이터셋의 첫번째 부터 _n_개의 배열을 반환
+* saveAsTextFile(path)	데이터셋을 텍스트 파일로 지정한 위치에 저장
+* countByKey()	키를 기준으로 카운트 반환
+* foreach(func)	데이터셋의 각 엘리먼트를 _func_로 처리. 보통 Accmulator와 함께 사용
 
 
 
