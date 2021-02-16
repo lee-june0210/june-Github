@@ -77,8 +77,11 @@ items(), values() 값을 잘 활용해야함
 -------------
 * dict 자료 저장 형태
 ```
-d[genres[i]] = plays[i]
+d = {}
+d["a"] = [1]
+d["a"].append(2)
 ```
+d = {"a" : [1,2]}
 ## :mega: 프린터
 
 ```python
