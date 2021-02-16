@@ -26,7 +26,7 @@ def solution(genres, plays):
             lst[genres[i]] = []
         lst[genres[i]].append(plays[i])
     while d:
-        max1 = [k for k,v in d.items() if max(d.values()) == v] # 외워두면 좋을 거 ㅇㅈ
+        max1 = [k for k,v in d.items() if max(d.values()) == v] # 알아두면 좋을 거 ㅇㅈ
         i = lst[max1[0]]
         i.sort(reverse=True)
         gen = max1[0]
@@ -39,16 +39,43 @@ def solution(genres, plays):
 ### 정리 
 -------------
 * for and if in one line
-```python
-[k for k,v in d.items() if max(d.values()) == v]
 ```
+for i in v:     # 기존 
+    print(i)    
+    
+[i for i in v]  # 한줄로 했을때
+```
+for i in v:
+    if i == 12:
+        print(i)
+```
+기존
+```
+[i for i in v if i == 12 ]
+```
+```
+for i in v:
+if i == 12:
+print(i)
+else:
+print("No")
+```
+기존
+```
+[i if i==12 else "No" for i in v]
+```
+
 * dict
 ```
 d.keys()           // 딕셔너리의 key 조회
 d.values()         // 딕너리의 value 조회
 d.items()          // 딕셔너리의 key-value를 리스트로 조회
 ```
-*
+* value 값으로 max값 찾기
+```
+[k for k,v in d.items() if max(d.values()) == v]
+```
+items(), values() 값을 잘 활용해야함
 
 #### 참고
 -------------
