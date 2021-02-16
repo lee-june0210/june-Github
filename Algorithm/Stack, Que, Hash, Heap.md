@@ -52,9 +52,10 @@ d.items()          // 딕셔너리의 key-value를 리스트로 조회
 
 #### 참고
 -------------
-* dict 자료 저 
+* dict 자료 저장 형태
+```
 d[genres[i]] = plays[i]
-
+```
 ## :mega: 프린터
 
 ```python
