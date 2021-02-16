@@ -1,5 +1,46 @@
 # 스택, 큐, 해시, 힙
 
+
+
+## :mega: 베스트 앨범
+
+```python
+def solution(genres, plays):
+    answer = []
+    def num(n,gen):
+        for i in range(len(plays)):
+            if genres[i] == gen and plays[i] == n:
+                if i not in answer:
+                    return i
+                else:
+                    continue
+    d = {}
+    for i in range(len(genres)):
+        if genres[i] not in d:
+            d[genres[i]] = plays[i]
+        else:
+            d[genres[i]] += plays[i]
+    lst = {}
+    for i in range(len(genres)):
+        if genres[i] not in lst:
+            lst[genres[i]] = []
+        lst[genres[i]].append(plays[i])
+    while d:
+        max1 = [k for k,v in d.items() if max(d.values()) == v]
+        i = lst[max1[0]]
+        i.sort(reverse=True)
+        gen = max1[0]
+        answer.append(num(i[0],gen))
+        if len(i) != 1:
+            answer.append(num(i[1],gen))
+        d.pop(max1[0])
+    return answer
+```
+### 정리 
+-------------
+*
+*
+
 ## :mega: 프린터
 
 ```python
