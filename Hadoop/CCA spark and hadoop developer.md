@@ -29,6 +29,10 @@ RDD는 스파크에서 기본적인 데이터 단위라고 볼 수 있다.
   - Resilient : Memory 내 데이터 손실 시, 다시 생성할 수 있음. 즉, 유실된 파티션을 재연산해 복구(탄력적)
   - Distributed : Cluster를 통해 메모리에 분산되어 저장(분산)
   - Dataset : 파일을 통해 가져올수있음 
+* 
+* 
+* Hue(Hadoop User Experience
+ Apache Hadoop 클러스터와 함께 사용되는 웹 기반 사용자 인터페이스입니다. Hue는 다른 Hadoop 에코시스템과 함께 그룹화되어 Hive 작업 및 Spark Job 등을 실행할 수 있습니다.
 
 #### RDD 함수	설명
 -------------
