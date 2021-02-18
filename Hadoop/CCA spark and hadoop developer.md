@@ -1,3 +1,12 @@
+#### 유형 정리 
+
+* DB를 불러오기 -> Please accomplish following activities.
+  - sqoop으로 부르는 경우
+  - mysql로 부르는 경우
+* code snippet과 output 주고 만들라고 하기
+* hive 어쩌구 
+* csv 파일 제공
+
 #### 빅데이터 
 한대의 컴퓨터로는 저장하거나 연산하기 어려운 규모의 거대 데이터
 #### 분산
@@ -6,13 +15,6 @@
 데이터를 저장함.
 #### 분석
 데이터가 저장된 컴퓨터에서 데이터를 분석하고 그 결과를 합친다.
-
-#### 유형 정리 
-
-* DB를 불러오기 -> Please accomplish following activities.
-  - sqoop으로 부르는 경우
-  - mysql로 부르는 경우
-* code snippet과 output 주고 만들라고 하기
 
 ### 용어 정리
 ----------------------
@@ -62,7 +64,7 @@ Apache Hadoop 클러스터와 함께 사용되는 웹 기반 사용자 인터페
 * saveAsTextFile(path)	데이터셋을 텍스트 파일로 지정한 위치에 저장
 * countByKey()	키를 기준으로 카운트 반환
 * sc.parallelize() 파이썬 리스트를 스파크 클러스터로 가져오는 함수
-* sc.textFile()
+* sc.textFile() csv도 얘로 부를수있나봐
 
 
 
