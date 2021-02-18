@@ -1,15 +1,17 @@
 #### 빅데이터 
 한대의 컴퓨터로는 저장하거나 연산하기 어려운 규모의 거대 데이터
-
 #### 분산
 여러대의 컴퓨터로 나눠서 일을 처리함
-
 #### 저장
 데이터를 저장함.
-
 #### 분석
 데이터가 저장된 컴퓨터에서 데이터를 분석하고 그 결과를 합친다.
 
+#### 유형 정리 
+
+* DB를 불러오기 -> Please accomplish following activities.
+  - sqoop으로 부르는 경우
+  - mysql로 부르는 경우
 
 ### 용어 정리
 ----------------------
@@ -29,10 +31,15 @@ RDD는 스파크에서 기본적인 데이터 단위라고 볼 수 있다.
   - Resilient : Memory 내 데이터 손실 시, 다시 생성할 수 있음. 즉, 유실된 파티션을 재연산해 복구(탄력적)
   - Distributed : Cluster를 통해 메모리에 분산되어 저장(분산)
   - Dataset : 파일을 통해 가져올수있음 
-* 
+
+* 스쿱(sqoop)
+
+관계형 데이터베이스와 하둡 사이에서 데이터 이관을 지원하는 툴이다. 스쿱을 이용하면 관계형 데이터베이스의 데이터를 HDFS, 하이브, Hbase에 임포트(import)하거나, 반대로 관계형 DB로 익스포트(export)할 수 있다. 
+
+
 * 
 * Hue(Hadoop User Experience
- Apache Hadoop 클러스터와 함께 사용되는 웹 기반 사용자 인터페이스입니다. Hue는 다른 Hadoop 에코시스템과 함께 그룹화되어 Hive 작업 및 Spark Job 등을 실행할 수 있습니다.
+Apache Hadoop 클러스터와 함께 사용되는 웹 기반 사용자 인터페이스입니다. Hue는 다른 Hadoop 에코시스템과 함께 그룹화되어 Hive 작업 및 Spark Job 등을 실행할 수 있습니다.
 
 #### RDD 함수	설명
 -------------
@@ -56,4 +63,7 @@ RDD는 스파크에서 기본적인 데이터 단위라고 볼 수 있다.
 
 
 
-출처: https://devanix.tistory.com/307 [┗System∑Sec†ion┛]
+#### 출처
+----------------------------
+https://devanix.tistory.com/307 [┗System∑Sec†ion┛] <br>
+https://excelsior-cjh.tistory.com/56 [EXCELSIOR]
