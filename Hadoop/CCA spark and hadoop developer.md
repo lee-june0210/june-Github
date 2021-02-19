@@ -11,7 +11,9 @@ Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라
 * 데이터 제공
   - output 주고 필요한 코드 요구하는 경우
   - sum 등 뽑아내라고 요구하는 경우
-* 
+* 파일 제공 후 요구한 방식대로 불러오기
+  - filter 등 처리하고 다시 저장하기
+* python 활용
 * hive 어쩌구 
 * csv 파일 제공하고 그 안의 데이터들로 
 * XXX,YYY
@@ -26,18 +28,24 @@ Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라
 #### 분석
 데이터가 저장된 컴퓨터에서 데이터를 분석하고 그 결과를 합친다.
 
-Apache Hadoop is an open-source software framework written in Java for distributed storage and distributed processing of very large data sets on computer clusters built from commodity hardware.
-All the modules in Hadoop are designed with a fundamental assumption that hardware failures are common and should be automatically handled by the framework.
-The core of Apache Hadoop consists of a storage part known as  HDFS and a processing part called MapReduce. Hadoop splits files into large blocks and distributes them across nodes in a cluster. To process data, Hadoop transfers packaged code for nodes to process in parallel based on the data that needs to be processed.
+Apache Hadoop is an open-source software framework for distributed storage and distributed processing of very large data sets on computer clusters built from commodity hardware.
 
-his approach takes advantage of data locality nodes manipulating the data they have access to to allow the dataset to be processed faster and more efficiently than it would be in a more conventional supercomputer architecture that relies on a parallel file system where computation and data are distributed via high-speed networking 
+All the modules in Hadoop are designed with a fundamental assumption that hardware failures are common and should be automatically handled by the framework.
+
+The core of Apache Hadoop consists of a storage part known as  HDFS and a processing part called MapReduce.
+
+ Hadoop splits files into large blocks and distributes them across nodes in a cluster. 
+
+To process data, Hadoop transfers packaged code for nodes to process in parallel based on the data.
+
+Hadoop approach takes advantage of data locality nodes manipulating the data they have access to allow the dataset to be processed faster and more efficiently than it would be in a more conventional supercomputer architecture that relies on a parallel file system where computation and data are distributed via high speed 
 
 For a slightly more complicated task, lets look into splitting up sentences from our documents into word bigrams. A bigram is pair of successive tokens in some sequence.
 We will look at building bigram from the sequences of words in each sentence, and then try to find the most frequently occuring ones.
 
 The first problem is that values in each partition of our initial RDD describe lines from the file rather than sentences. Sentences may be split over multiple lines. 
  
-The glom() RDD method is used to create a single entry for each document containing the list of all lines, we can then join the lines up, then resplit them into sentences using "." as the separator, using flatMap so that every object in our RDD is now a sentence.
+The glom() RDD method is used to create a single entry for each document containing the list of all lines. we can then join the lines up, then resplit them into sentences using "." as the separator, using flatMap so that every object in our RDD is now a sentence.
 
 A bigram is pair of successive tokens in some sequence. Please build bigrams from the sequences of words in each sentence, and then try to find the most frequently occuring ones.
 
