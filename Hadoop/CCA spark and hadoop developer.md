@@ -5,7 +5,7 @@ Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라
 
 #### 유형 정리 
 
-* DB를 불러오기 -> Please accomplish following activities.
+* DB 생성(mysql, hive) 후, import or export로 값 넣고 데이터 전처리 조회하기
   - sqoop으로 부르는 경우
   - mysql로 부르는 경우
 * 데이터 제공
