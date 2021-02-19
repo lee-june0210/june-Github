@@ -113,52 +113,34 @@ Apache Hadoop 클러스터와 함께 사용되는 웹 기반 사용자 인터페
 * countByKey()	키를 기준으로 카운트 반환
 * sc.parallelize() 파이썬 리스트를 스파크 클러스터로 가져오는 함수
 * sc.textFile() csv도 얘로 부를수있나봐
+* join() 두 개의 키-값 RDD를 사용하여 내부 조인을 수행합니다. 이 작업을 수행하려면 키가 일반적으로 비슷해야합니다.
+* keyBy()  각 데이터 항목에 함수를 적용하여 두 구성 요소 튜플 (키-값 쌍)을 구성합니다. 함수의 결과는 키가되고 원래 데이터가 값이됩니다.
 
 합집합
-
-
 
 scala> rdd1.union(rdd2).collect()
 
 res11: Array[String] = Array(Spark, Scala, Akka, Scala)
 
 
-
-
-
 교집합.
-
-
 
 scala> rdd1.intersection(rdd2).collect()
 
 res12: Array[String] = Array(Scala)
 
 
-
-
-
 카테시안
-
-
 
 scala> rdd1.cartesian(rdd2).collect()
 
 res13: Array[(String, String)] = Array((Spark,Akka), (Spark,Scala), (Scala,Akka), (Scala,Scala))
 
-
-
-
-
 차집합(A-B)
-
-
 
 scala> rdd1.subtract(rdd2).collect()
 
 res14: Array[String] = Array(Spark)
-
-
 
 
 #### 출처
