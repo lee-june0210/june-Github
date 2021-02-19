@@ -15,6 +15,7 @@ Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라
 * hive 어쩌구 
 * csv 파일 제공하고 그 안의 데이터들로 
 * XXX,YYY
+* bigram으로 빈도수 높은 단어 찾기
 
 #### 빅데이터 
 한대의 컴퓨터로는 저장하거나 연산하기 어려운 규모의 거대 데이터
