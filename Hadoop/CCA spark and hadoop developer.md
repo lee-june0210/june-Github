@@ -11,6 +11,7 @@ Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라
 * 데이터 제공
   - output 주고 필요한 코드 요구하는 경우
   - sum 등 뽑아내라고 요구하는 경우
+  - local에 저장, python으로 불러내서 전처리 한다음 요구 사항 파일 형식에 맞춰 다시 저장
 * 파일 제공 후 요구한 방식대로 불러오기
   - filter 등 처리하고 다시 저장하기
 * python 활용
