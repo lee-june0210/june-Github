@@ -15,6 +15,7 @@ Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라
 * 파일 제공(csv, txt) 후 요구 수행
   - filter 등 처리하고 다시 저장하기
   - 안에 있는 데이터들로 작업하기
+  - import or export
 * python 활용
 * hive 어쩌구 
 * 제공한 것들로 log를 멈추라는디 
@@ -115,6 +116,273 @@ Apache Hadoop 클러스터와 함께 사용되는 웹 기반 사용자 인터페
 * sc.textFile() csv도 얘로 부를수있나봐
 * join() 두 개의 키-값 RDD를 사용하여 내부 조인을 수행합니다. 이 작업을 수행하려면 키가 일반적으로 비슷해야합니다.
 * keyBy()  각 데이터 항목에 함수를 적용하여 두 구성 요소 튜플 (키-값 쌍)을 구성합니다. 함수의 결과는 키가되고 원래 데이터가 값이됩니다.
+
+ 
+
+1) appendToFile
+
+Local 파일들을 hdfs에 append 저장하기 위한 목적
+
+Usage: hdfs dfs -appendToFile {localsrc} ... {dst}
+ 
+
+2) cat
+
+해당 파일을 stdout으로 찍어서 보여준다. (linux 명령어 cat과 동일)
+
+Usage: hdfs dfs -cat URI [URI ...]
+ 
+
+3) chgrp
+
+해당 파일의 오너이거나 슈퍼오너라면, 해당 파일의 그룹 권한을 변경가능하다.
+
+Usage: hdfs dfs -chgrp [-R] GROUP URI [URI ...]
+ 
+
+4) chmod
+
+해당 파일의 오너이거나 슈퍼오너라면, 특정 파일의 permission 수정. -R 옵션과 함께라면 예하 파일들에 대해서 동일하게 permission 적용 가능
+
+Usage: hdfs dfs -chmod [-R] {MODE[,MODE]... | OCTALMODE} URI [URI ...]
+ 
+
+5) chown
+
+슈퍼오너일 경우 해당 파일의 owner를 변경. 상세 Permission guide(바로가기) 참고
+
+Usage: hdfs dfs -chown [-R] [OWNER][:[GROUP]] URI [URI ]
+ 
+
+6) copyFromLocal
+
+Local 파일을 hdfs에 업로드. put명령어와 유사
+
+Usage: hdfs dfs -copyFromLocal {localsrc} URI
+ 
+
+7) copyToLocal
+
+Hdfs에 있는 파일을 local directory에 다운로드, get 명령어와 유사
+
+Usage: hdfs dfs -copyToLocal [-ignorecrc] [-crc] URI {localdst}
+ 
+
+8) count
+
+Directory 개수, file 개수 등을 카운트하여 숫자로 보여줌. 
+
+Usage: hdfs dfs -count [-q] [-h] 
+-count : DIR_COUNT, FILE_COUNT, CONTENT_SIZE FILE_NAME 을 보여줌
+
+-count -q : QUOTA, REMAINING_QUATA, SPACE_QUOTA, REMAINING_SPACE_QUOTA, DIR_COUNT, FILE_COUNT, CONTENT_SIZE, FILE_NAME 을 보여줌
+
+-h : Show sizes human readable format 
+
+ 
+
+9) cp
+
+Hdfs내부에서 파일을 복붙함. 만약 복사하고자 하는 대상이 여러개라면 붙여넣는 곳은 반드시 Directory여야 한다.
+
+Usage: hdfs dfs -cp [-f] [-p | -p[topax]] URI [URI ...] {dest}
+-f : Overwrite the destination if it already exist
+
+-p : 파일 속성(timestamps, ownership, permission, ACL, XAttr)을 유지하고 복붙 수행
+
+ 
+
+10) du
+
+Hdfs내부의 특정 file이나 directory의 size를 보여줌
+
+Usage: hdfs dfs -du [-s] [-h] URI [URI ...]
+-s : 각각의 파일(혹은 directory) size의 sum 값을 보여줌
+
+-h : Show human-readable format
+
+ 
+
+11) dus
+
+특정 file의 length를 보여줌.
+
+Usage: hdfs dfs -dus {args}
+ 
+
+12) expunge
+
+휴지통 비우기(완전 삭제)
+
+Usage: hdfs dfs -expunge
+ 
+
+13) get
+
+Hdfs의 파일을 local directory로 다운로드
+
+Usage: hdfs dfs -get [-ignorecrc] [-crc] {src} {localdst}
+ 
+
+14) getfacl
+
+Hdfs의 특정 파일 혹은 디렉토리의 ACLs(Access Control Lists)정보를 보여줌
+
+Usage: hdfs dfs -getfacl [-R] {path}
+ 
+
+ 
+
+15) getfattr
+
+Hdfs의 특정 파일 혹은 디렉토리의 속성 정보들을 나열, 보여줌
+
+Usage: hdfs dfs -getfattr [-R] -n name | -d [-e en] {path}
+-R : 파일 혹은 디렉토리 이하의 폴더들에 대한 정보 보여줌
+
+ 
+
+16) getmerge
+
+Hdfs내부의 source file을 local file에 append하여 붙여 다운로드
+
+Usage: hdfs dfs -getmerge {src} {localdst} [addnl]
+ 
+
+17) ls
+
+특정 디렉토리의 파일 혹은 디렉토리를 보여줌
+
+Usage: hdfs dfs -ls [-R] {args}
+-R : 특정 디렉토리 이하에 대해서 정보를 보여줌
+
+ 
+
+18) lsr
+
+ls -R 과 동일하게 작동
+
+Usage: hdfs dfs -lsr {args}
+ 
+
+ 
+
+19) mkdir
+
+특정 path에 directory 생성
+
+Usage: hdfs dfs -mkdir [-p] {paths}
+ 
+
+20) movefromLocal
+
+Local의 파일을 hdfs에 저장. put과 비슷하지만 저장 이후 local file은 삭제
+
+Usage: hdfs dfs -moveFromLocal {localsrc} {dst}
+ 
+
+21) moveToLocal
+
+Hdfs의 파일을 local에 저장. get과 비슷하지만 저장 이후 hdfs file은 삭제
+
+Usage: hdfs dfs -moveToLocal [-crc] {src} {dst}
+ 
+
+22) mv
+
+Hdfs내부에서 파일을 옮김
+
+Usage: hdfs dfs -mv URI [URI ...] {dest}
+ 
+
+23) put
+
+Local의 파일들을 hdfs에 저장
+
+Usage: hdfs dfs -put {localsrc} ... {dst}
+ 
+
+24) rm
+
+Hdfs의 특정 폴더 혹은 파일을 삭제
+
+Usage: hdfs dfs -rm [-f] [-r|-R] [-skipTrash] URI [URI ...]
+-R : 특정 디렉토리 이하의 폴더 모두 제거
+
+-r : -R과 동일
+
+-skipTrash : 즉시 완전 삭제
+
+ 
+
+25) rmr
+
+rm -r과 동일한 명령어
+
+Usage: hdfs dfs -rmr [-skipTrash] URI [URI ...]
+ 
+
+26) setfacl
+
+Hdfs의 특정 폴더 혹은 파일에 대해 Access Control Lists(ACLs)를 set
+
+Usage: hdfs dfs -setfacl [-R] [-b|-k -m|-x {acl_spec} {path}]|[--set {acl_spec} {path}]
+ 
+
+27) setfattr
+
+Hdfs의 특정 폴더 혹은 파일에 대해 속성을 set
+
+Usage: hdfs dfs -setfattr -n name [-v value] | -x name {path}
+ 
+
+28) setrep
+
+Hdfs의 특정 파일에 대해 replication factor을 수정
+
+Usage: hdfs dfs -setrep [-R] [-w] {numReplicas} {path}
+ 
+
+29) stat
+
+Hdfs의 특정 디렉토리의 stat information 확인
+
+Usage: hdfs dfs -stat URI [URI ...]
+ 
+
+30) tail
+
+특정 file에 대해 마지막 kilobyte을 stdout으로 보여줌
+
+Usage: hdfs dfs -tail [-f] URI
+ 
+
+31) test
+
+옵션과 함께 파일 혹은 디렉토리의 이상 유무를 체크
+
+Usage: hdfs dfs -test -[ezd] URI
+-e : file exist, return 0
+
+-z : file is zero length, return 0
+
+-d : path is diretory, return 0
+
+ 
+
+32) text
+
+Hdfs의 특정 파일을 text format으로 확인
+
+Usage: hdfs dfs -text {src}
+ 
+
+33) touchz
+
+Zero length인 file을 생성
+
+Usage: hdfs dfs -touchz URI [URI ...]
+
 
 합집합
 
