@@ -1,3 +1,5 @@
+# CCA Spark and Hadoop Developer (CCA175)
+
 
 Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라는 처리 부분으로 구성됩니다.
 
@@ -143,6 +145,37 @@ scala> rdd1.subtract(rdd2).collect()
 
 res14: Array[String] = Array(Spark)
  
+ scala> val hash1 = sc.parallelize( Seq(("1", "A"), ("2", "B"), ("3", "C"), ("1","D")))
+
+hash1: org.apache.spark.rdd.RDD[(String, String)] = ParallelCollectionRDD[64] at parallelize at <console>:24
+
+
+
+scala> val hash2 = sc.parallelize( Seq(("1", "W"), ("2", "X"), ("3", "Y"), ("2","Z")))
+
+hash2: org.apache.spark.rdd.RDD[(String, String)] = ParallelCollectionRDD[65] at parallelize at <console>:24
+
+
+
+
+
+
+
+scala> hash1.join(hash2).collect()
+
+res15: Array[(String, (String, String))] = Array((1,(A,W)), (1,(D,W)), (2,(B,X)), (2,(B,Z)), (3,(C,Y)))
+
+
+
+cogroup 함수는 (K, V)를 (K, Iterable<V>)로 변환한다.
+
+
+scala> hash1.cogroup(hash2).collect()
+
+res16: Array[(String, (Iterable[String], Iterable[String]))] = Array((1,(CompactBuffer(A, D),CompactBuffer(W))), (2,(CompactBuffer(B),CompactBuffer(X, Z))), (3,(CompactBuffer(C),CompactBuffer(Y))))
+
+
+
 ### HDFS 명령어 정리
 -------------
 1) appendToFile
@@ -270,7 +303,6 @@ Usage: hdfs dfs -lsr {args}
  
 
  
-
 19) mkdir
 
 특정 path에 directory 생성
@@ -295,9 +327,7 @@ Hdfs내부에서 파일을 옮김
 Usage: hdfs dfs -mv URI [URI ...] {dest}
  
 
-23) put
-
-Local의 파일들을 hdfs에 저장
+23) put : Local의 파일들을 hdfs에 저장
 Usage: hdfs dfs -put {localsrc} ... {dst}
  
 
@@ -310,7 +340,6 @@ Usage: hdfs dfs -rm [-f] [-r|-R] [-skipTrash] URI [URI ...]
 -skipTrash : 즉시 완전 삭제
 
  
-
 25) rmr
 
 rm -r과 동일한 명령어
@@ -329,44 +358,17 @@ Hdfs의 특정 폴더 혹은 파일에 대해 속성을 set
 Usage: hdfs dfs -setfattr -n name [-v value] | -x name {path}
  
 
-28) setrep
 
-Hdfs의 특정 파일에 대해 replication factor을 수정
-Usage: hdfs dfs -setrep [-R] [-w] {numReplicas} {path}
- 
 
-29) stat
 
-Hdfs의 특정 디렉토리의 stat information 확인
-Usage: hdfs dfs -stat URI [URI ...]
- 
-
-30) tail
-
-특정 file에 대해 마지막 kilobyte을 stdout으로 보여줌
-Usage: hdfs dfs -tail [-f] URI
- 
-
-31) test
-
-옵션과 함께 파일 혹은 디렉토리의 이상 유무를 체크
-Usage: hdfs dfs -test -[ezd] URI
--e : file exist, return 0
--z : file is zero length, return 0
--d : path is diretory, return 0
+30) tail : 특정 file에 대해 마지막 kilobyte을 stdout으로 보여줌
 
  
 
-32) text
 
-Hdfs의 특정 파일을 text format으로 확인
-Usage: hdfs dfs -text {src}
  
 
-33) touchz
-
-Zero length인 file을 생성
-Usage: hdfs dfs -touchz URI [URI ...]
+33) touchz : Zero length인 file을 생성
 
 
 
@@ -375,5 +377,6 @@ Usage: hdfs dfs -touchz URI [URI ...]
 #### 출처
 ----------------------------
 https://devanix.tistory.com/307 [┗System∑Sec†ion┛] <br>
- https://knight76.tistory.com/entry/spark-집합-함수-union-intersection-cartesian-subtract-join-cogroup-예제 [김용환 블로그(2004-2020)]
-https://excelsior-cjh.tistory.com/56 [EXCELSIOR]
+ https://knight76.tistory.com/entry/spark-집합-함수-union-intersection-cartesian-subtract-join-cogroup-예제 [김용환 블로그(2004-2020)]<br>
+https://excelsior-cjh.tistory.com/56 [EXCELSIOR]<br>
+
