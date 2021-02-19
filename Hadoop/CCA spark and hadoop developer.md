@@ -113,9 +113,55 @@ Apache Hadoop 클러스터와 함께 사용되는 웹 기반 사용자 인터페
 * sc.parallelize() 파이썬 리스트를 스파크 클러스터로 가져오는 함수
 * sc.textFile() csv도 얘로 부를수있나봐
 
+합집합
+
+
+
+scala> rdd1.union(rdd2).collect()
+
+res11: Array[String] = Array(Spark, Scala, Akka, Scala)
+
+
+
+
+
+교집합.
+
+
+
+scala> rdd1.intersection(rdd2).collect()
+
+res12: Array[String] = Array(Scala)
+
+
+
+
+
+카테시안
+
+
+
+scala> rdd1.cartesian(rdd2).collect()
+
+res13: Array[(String, String)] = Array((Spark,Akka), (Spark,Scala), (Scala,Akka), (Scala,Scala))
+
+
+
+
+
+차집합(A-B)
+
+
+
+scala> rdd1.subtract(rdd2).collect()
+
+res14: Array[String] = Array(Spark)
+
+
 
 
 #### 출처
 ----------------------------
 https://devanix.tistory.com/307 [┗System∑Sec†ion┛] <br>
+ https://knight76.tistory.com/entry/spark-집합-함수-union-intersection-cartesian-subtract-join-cogroup-예제 [김용환 블로그(2004-2020)]
 https://excelsior-cjh.tistory.com/56 [EXCELSIOR]
