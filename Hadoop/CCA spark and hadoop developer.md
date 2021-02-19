@@ -1,7 +1,10 @@
 # CCA Spark and Hadoop Developer (CCA175)
+------------------------------
+Apache Hadoop은 상용 하드웨어로 구축 된 컴퓨터 클러스터에서 대용량 데이터 세트의 분산 스토리지 및 분산 처리를위한 오픈 소스 소프트웨어 프레임 워크입니다.<br>
+Hadoop의 모든 모듈은 하드웨어 오류가 일반적이며 프레임 워크에 의해 자동으로 처리되어야한다는 기본적인 가정하에 설계되었습니다. <br>
+Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라는 처리 부분으로 구성됩니다.<br>
+Hadoop은 파일을 큰 블록으로 분할하고 클러스터의 노드에 배포합니다.
 
-
-Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라는 처리 부분으로 구성됩니다.
 
 <img src = "https://user-images.githubusercontent.com/76678910/108342830-963b8300-721e-11eb-9622-b6a4c72708a3.png"></img>
 
@@ -16,14 +19,13 @@ Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라
   - local에 저장(csv,json), python으로 불러내서 전처리 한다음 요구 사항 파일 형식에 맞춰 다시 저장
 * 파일 제공(csv, txt) 후 요구 수행
   - filter 등 처리하고 다시 저장하기
-  - 안에 있는 데이터들로 작업하기
+  - 안에 있는 데이터들로 작업하기(단어 빈도수)
   - import or export
 * python 활용
 * hive 어쩌구 
 * 제공한 것들로 log를 멈추라는디 
 * XXX,YYY
-* bigram으로 빈도수 높은 단어 찾기
-* 
+
 
 #### 빅데이터 
 한대의 컴퓨터로는 저장하거나 연산하기 어려운 규모의 거대 데이터
@@ -34,26 +36,8 @@ Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라
 #### 분석
 데이터가 저장된 컴퓨터에서 데이터를 분석하고 그 결과를 합친다.
 
-Apache Hadoop is an open-source software framework for distributed storage and distributed processing of very large data sets on computer clusters built from commodity hardware.
 
-All the modules in Hadoop are designed with a fundamental assumption that hardware failures are common and should be automatically handled by the framework.
 
-The core of Apache Hadoop consists of a storage part known as  HDFS and a processing part called MapReduce.
-
- Hadoop splits files into large blocks and distributes them across nodes in a cluster. 
-
-To process data, Hadoop transfers packaged code for nodes to process in parallel based on the data.
-
-Hadoop approach takes advantage of data locality nodes manipulating the data they have access to allow the dataset to be processed faster and more efficiently than it would be in a more conventional supercomputer architecture that relies on a parallel file system where computation and data are distributed via high speed 
-
-For a slightly more complicated task, lets look into splitting up sentences from our documents into word bigrams. A bigram is pair of successive tokens in some sequence.
-We will look at building bigram from the sequences of words in each sentence, and then try to find the most frequently occuring ones.
-
-The first problem is that values in each partition of our initial RDD describe lines from the file rather than sentences. Sentences may be split over multiple lines. 
- 
-The glom() RDD method is used to create a single entry for each document containing the list of all lines. we can then join the lines up, then resplit them into sentences using "." as the separator, using flatMap so that every object in our RDD is now a sentence.
-
-A bigram is pair of successive tokens in some sequence. Please build bigrams from the sequences of words in each sentence, and then try to find the most frequently occuring ones.
 
 ### 용어 정리
 ----------------------
@@ -118,60 +102,43 @@ Apache Hadoop 클러스터와 함께 사용되는 웹 기반 사용자 인터페
 * sc.textFile() csv도 얘로 부를수있나봐
 * join() 두 개의 키-값 RDD를 사용하여 내부 조인을 수행합니다. 이 작업을 수행하려면 키가 일반적으로 비슷해야합니다.
 * keyBy()  각 데이터 항목에 함수를 적용하여 두 구성 요소 튜플 (키-값 쌍)을 구성합니다. 함수의 결과는 키가되고 원래 데이터가 값이됩니다.
-합집합
 * subtractByKey() key 값이 첫번째 RDD에서 항목을 제거하기위한 기준으로 자동으로 사용됩니다.
-
+* union()
+* intersection()
+* a
 scala> rdd1.union(rdd2).collect()
 
 res11: Array[String] = Array(Spark, Scala, Akka, Scala)
 
 
 교집합.
-
 scala> rdd1.intersection(rdd2).collect()
 
-res12: Array[String] = Array(Scala)
-
-
-카테시안
-
-scala> rdd1.cartesian(rdd2).collect()
-
-res13: Array[(String, String)] = Array((Spark,Akka), (Spark,Scala), (Scala,Akka), (Scala,Scala))
 
 차집합(A-B)
 
 scala> rdd1.subtract(rdd2).collect()
-
 res14: Array[String] = Array(Spark)
- 
- scala> val hash1 = sc.parallelize( Seq(("1", "A"), ("2", "B"), ("3", "C"), ("1","D")))
-
+scala> val hash1 = sc.parallelize( Seq(("1", "A"), ("2", "B"), ("3", "C"), ("1","D")))
 hash1: org.apache.spark.rdd.RDD[(String, String)] = ParallelCollectionRDD[64] at parallelize at <console>:24
 
 
 
 scala> val hash2 = sc.parallelize( Seq(("1", "W"), ("2", "X"), ("3", "Y"), ("2","Z")))
-
 hash2: org.apache.spark.rdd.RDD[(String, String)] = ParallelCollectionRDD[65] at parallelize at <console>:24
 
 
 
 
 
-
-
 scala> hash1.join(hash2).collect()
-
 res15: Array[(String, (String, String))] = Array((1,(A,W)), (1,(D,W)), (2,(B,X)), (2,(B,Z)), (3,(C,Y)))
-
 
 
 cogroup 함수는 (K, V)를 (K, Iterable<V>)로 변환한다.
 
 
 scala> hash1.cogroup(hash2).collect()
-
 res16: Array[(String, (Iterable[String], Iterable[String]))] = Array((1,(CompactBuffer(A, D),CompactBuffer(W))), (2,(CompactBuffer(B),CompactBuffer(X, Z))), (3,(CompactBuffer(C),CompactBuffer(Y))))
 
 
