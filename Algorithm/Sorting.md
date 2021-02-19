@@ -201,8 +201,8 @@ for i in range(len(lst)):
 -----------------
 
 ```python
-for idx, s in enumerate(score):
-    if s == max(score):
+for s in range(len(score):
+    if lst[s] == max(score):
         result.append(idx+1)
 ```
 
