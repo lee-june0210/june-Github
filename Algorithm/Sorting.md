@@ -144,7 +144,7 @@ n = int(input())
 lst = []
 nxt_lst = []
 for _ in range(n):
-    word = input()
+    word = input() # 정해진 수만큼 값 받기
     lst.append(word)
 for _ in range(n-1):
     nxt = input()
