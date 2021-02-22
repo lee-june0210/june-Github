@@ -5,6 +5,14 @@ Hadoop의 모든 모듈은 하드웨어 오류가 일반적이며 프레임 워�
 Apache Hadoop의 핵심은 HDFS로 알려진 스토리지 부분과 MapReduce라는 처리 부분으로 구성됩니다.<br>
 Hadoop은 파일을 큰 블록으로 분할하고 클러스터의 노드에 배포합니다.
 
+### haoop environment
+#### CDP Private Cloud Installation
+
+Creating a CDP Private Cloud Base cluster requires multiple, Internet-connected Linux machines.
+
+You must be able to log in to the Cloudera Manager Server host using the root user account or an account that has passwordless sudo privileges.
+The Cloudera Manager Server host must have uniform SSH access on the same port to all hosts. For more information, see Runtime and Cloudera Manager Networking and Security Requirements.
+SELinux must be disabled or set to permissive mode before running the installer.
 
 <img src = "https://user-images.githubusercontent.com/76678910/108342830-963b8300-721e-11eb-9622-b6a4c72708a3.png"></img>
 
