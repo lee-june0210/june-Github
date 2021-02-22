@@ -28,7 +28,12 @@ SELinux must be disabled or set to permissive mode before running the installer.
 4. java,python 확인
 5. spark 다운로드, 7 zip file manager로 압축해제
 6. progra~2로 공백 오류 제거
-7. 이와중에 갑자기 scala 폴더 접근 불가 선언
+7. 아직도 오류뜨길래 
+
+9. java는 예상하지 못했습니다 .오류 해결했더니 이제는 exception in thread "main" java.lang.verifyerror 머시기 scala 문젠줄 알고 scala 설치
+10. 이와중에 갑자기 scala 폴더 접근 불가 선언
+11.  jdk버전 문제인것같음. 
+12. spark 버전을 2.4로 다시깜 
 
 #### 유형 정리 
 
