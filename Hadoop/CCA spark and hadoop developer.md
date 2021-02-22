@@ -16,6 +16,9 @@ SELinux must be disabled or set to permissive mode before running the installer.
 
 <img src = "https://user-images.githubusercontent.com/76678910/108342830-963b8300-721e-11eb-9622-b6a4c72708a3.png"></img>
 
+* 7 zip file manager
+* 
+
 #### 유형 정리 
 
 * DB 생성(mysql, hive) 후, import or export로 값 넣고 데이터 전처리 조회하기
