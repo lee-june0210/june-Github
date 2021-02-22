@@ -16,7 +16,7 @@ SELinux must be disabled or set to permissive mode before running the installer.
 
 <img src = "https://user-images.githubusercontent.com/76678910/108342830-963b8300-721e-11eb-9622-b6a4c72708a3.png"></img>
 
-* 7 zip file manager
+* 
 
 
 > 210222 
@@ -25,7 +25,9 @@ SELinux must be disabled or set to permissive mode before running the installer.
 1. cloudera 제공 CDP private cloud 설치 작업 시작
 2. linux 환경 제공 요구해서 ubuntu 설치
 3. SELinux 해제 작업 중 박성면한테 2시에 전화옴 hadoop 작업 중단
-4. 
+4. java,python 확인
+5. spark 다운로드, 7 zip file manager로 압축해제
+6. progra~2로 공백 오류 제거
 
 #### 유형 정리 
 
