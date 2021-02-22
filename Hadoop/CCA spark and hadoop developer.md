@@ -28,6 +28,7 @@ SELinux must be disabled or set to permissive mode before running the installer.
 4. java,python 확인
 5. spark 다운로드, 7 zip file manager로 압축해제
 6. progra~2로 공백 오류 제거
+7. 이와중에 갑자기 scala 폴더 접근 불가 선언
 
 #### 유형 정리 
 
