@@ -17,7 +17,15 @@ SELinux must be disabled or set to permissive mode before running the installer.
 <img src = "https://user-images.githubusercontent.com/76678910/108342830-963b8300-721e-11eb-9622-b6a4c72708a3.png"></img>
 
 * 7 zip file manager
-* 
+
+
+> 210222 
+
+0. 박성면이 즐겨찾기 해놓은 사이트 가서 사태의 심각성 파악
+1. cloudera 제공 CDP private cloud 설치 작업 시작
+2. linux 환경 제공 요구해서 ubuntu 설치
+3. SELinux 해제 작업 중 박성면한테 2시에 전화옴 hadoop 작업 중단
+4. 
 
 #### 유형 정리 
 
