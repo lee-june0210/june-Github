@@ -53,6 +53,13 @@ SELinux must be disabled or set to permissive mode before running the installer.
 * 제공한 것들로 log를 멈추라는디 
 * XXX,YYY
 
+import org.apache.spark.sql._
+import org.apache.spark.sql.SaveMode
+val sqlContext = new org.apache.spark.sql.SQLContext(sc)
+val df = sqlContext.read.format("com.databricks.spark.csv").load("work/EmployeeName.csv")
+df.show
+뭐지........뭐가 먹힌거지........
+
 
 #### 빅데이터 
 한대의 컴퓨터로는 저장하거나 연산하기 어려운 규모의 거대 데이터
