@@ -88,6 +88,7 @@ mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
 #### limit
 where 절없이 limit 바로 사용 가능
 mysql에서만 사용가능
+ORACLE에서는 ROWNUM쓰라는데 프로그래머스에서 안먹넹
 ```sql
 SELECT NAME
 FROM ANIMAL_INS
