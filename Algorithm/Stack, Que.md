@@ -4,11 +4,11 @@
 ```python
 def solution(bridge, weight, truck):
     cnt = 0 
-    lst = [bridge] *len(truck)
+    lst = [bridge] *len(truck) # [bridge]*숫자가 되다니! 참고!
     que = []
     rg = 0
-    que_w = 0
-    while truck or que :
+    que_w = 0 # 원래는 아래서 sum()처리했는데 이게 testcase 5 시간초과돼서 이렇게 바꿔봄
+    while truck or que : # 이런게 되다니!
         cnt += 1
         for i in range(rg):
             lst[i] -= 1
@@ -16,13 +16,14 @@ def solution(bridge, weight, truck):
                 que_w -= que[0]
                 que.pop(0)
         if truck:
-            if que_w + truck[0] <= weight: 
+            if que_w + truck[0] <= weight: 원래는 밑에있는 if문하고 and로 엮었었는데 속도도 쫌더 빨라지고 깔끔함
                 que.append(truck[0])
                 que_w += truck[0]
                 truck.pop(0)
                 rg += 1
     return cnt
 ```
+다른 사람이 한거 '모의고사'문제랑 같은 충격이다. 이렇게 할 수도 있구나 참고
 ```python
 def solution(bridge_length, weight, truck_weights):
     time = 0
@@ -41,7 +42,8 @@ def solution(bridge_length, weight, truck_weights):
 
 #### 참고
 -------------
-* max() 함수
+* list 존재여부
+while문의 while list:와 같이 if list: 하면 list 존재 여부에 따라 조건절 필터링 
 
 ## :mega: 프린터
 
