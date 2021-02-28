@@ -26,10 +26,13 @@ where deptno in (10, 30);
 select name, job 
 from employee 
 where name like '%A%';
+
+WHERE INTAKE_CONDITION NOT IN ('Aged')
+WHERE INTAKE_CONDITION <> 'Aged'
 ```
 
 <img src="https://user-images.githubusercontent.com/76678910/105007465-61031000-5a7b-11eb-95e1-c99cf208e616.png" width="60%" height="60%"></img>
-#### NAME 순서대로 = 기본 / 역순으로 = DESC
+#### NAME 순서대로 = 기본 / 역순으로,  = DESC 
 ```sql
 SELECT EMPNO, NAME, JOB
 FROM EMPLOYEE
