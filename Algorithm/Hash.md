@@ -81,3 +81,54 @@ d["a"].append(2)
 # d = {"a" : [1,2]}
 ```
 
+## :mega: 전화번호부
+```python
+def solution(phone_book):
+
+    for i in range (len(phone_book)):
+        for j in range (i+1, len(phone_book)):
+            if phone_book[j].startswith(phone_book[i]):# startwith의 발견이다....python은 함수빨이군.....
+                return False
+            elif phone_book[i].startswith(phone_book[j]):
+                return False
+    return True
+```
+9일을 고민했던 건데 함수 쓰니깐 22분만에 풀렸다.
+
+#### 정리 
+-------------
+* startswith 
+접두어 일치 찾아주는 함수
+_str.startswith('str')_ 하면 일치 여부에 따라 True와 False를 반환한다.
+
+## :mega: 완주하지 못한 선수
+
+```python
+participant = ["aeo", "kiki", "eden"] 
+completion = ["eden", "kiki"]
+
+
+participant.sort()
+completion.sort()
+
+for i in range(len(completion)):
+    if participant[i] != completion[i]:
+        print(participant[i])
+        break
+else : 
+    print(participant[-1])
+```
+
+#### 참고
+-------------
+* def 함수 속 return
+
+```python
+for i in range(len(completion)):
+    if participant[i] != completion[i]:
+        return participant[i] 
+        break
+else : 
+    return participant[-1] 
+```
+returnd을 이렇게 바로 뽑아내도됨
