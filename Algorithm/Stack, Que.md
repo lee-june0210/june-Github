@@ -1,7 +1,47 @@
 # 스택, 큐
 
+## :mega: 다리를 건너는 트럭
+```python
+def solution(bridge, weight, truck):
+    cnt = 0 
+    lst = [bridge] *len(truck)
+    que = []
+    rg = 0
+    que_w = 0
+    while truck or que :
+        cnt += 1
+        for i in range(rg):
+            lst[i] -= 1
+            if lst[i] == 0:
+                que_w -= que[0]
+                que.pop(0)
+        if truck:
+            if que_w + truck[0] <= weight: 
+                que.append(truck[0])
+                que_w += truck[0]
+                truck.pop(0)
+                rg += 1
+    return cnt
+```
+```python
+def solution(bridge_length, weight, truck_weights):
+    time = 0
+    q = [0] * bridge_length
+    
+    while q:
+        time += 1
+        q.pop(0)
+        if truck_weights:
+            if sum(q) + truck_weights[0] <= weight:
+                q.append(truck_weights.pop(0))
+            else:
+                q.append(0)
+    return time
+```
 
-
+#### 참고
+-------------
+* max() 함수
 
 ## :mega: 프린터
 
