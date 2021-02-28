@@ -18,6 +18,16 @@ SELECT DISTINCT DEPTNO
 FROM EMPLOYEE;
 
 ```
+<img src="https://user-images.githubusercontent.com/76678910/105007477-62ccd380-5a7b-11eb-96e9-0ace40abd86a.png" width="60%" height="60%"></img>
+```
+select name, deptno 
+from employee 
+where deptno in (10, 30);
+
+select name, job 
+from employee 
+where name like '%A%';
+```
 
 <img src="https://user-images.githubusercontent.com/76678910/105007465-61031000-5a7b-11eb-95e1-c99cf208e616.png" width="60%" height="60%"></img>
 
@@ -36,16 +46,7 @@ ORDER BY NAME DESC;
 
 
 ```
-<img src="https://user-images.githubusercontent.com/76678910/105007477-62ccd380-5a7b-11eb-96e9-0ace40abd86a.png" width="60%" height="60%"></img>
-```
-select name, deptno 
-from employee 
-where deptno in (10, 30);
 
-select name, job 
-from employee 
-where name like '%A%';
-```
 <img src="https://user-images.githubusercontent.com/76678910/105007473-62343d00-5a7b-11eb-80b4-a1c00f434af2.png" width="60%" height="60%"></img>
 
 SELECT 구문 예제(함수의 사용)
