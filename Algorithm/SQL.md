@@ -85,6 +85,16 @@ mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
 
 ### SQL_오류 모음
 
+#### limit
+where 절없이 limit 바로 사용 가능
+mysql에서만 사용가능
+```sql
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATETIME
+LIMIT 1
+```
+
 #### ORDER BY
 ```sql
 ORDER BY NAME ASC, DATETIME DESC
