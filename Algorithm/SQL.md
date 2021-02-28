@@ -1,15 +1,14 @@
+# SQL
+
+#### SQL 배치순서
+<img src ="https://user-images.githubusercontent.com/76678910/109418232-a0bdff80-7a0a-11eb-8c51-bca8328eeb1e.PNG"></img>
+
 ### SQL 문법 정리
 
-
-<img src="https://user-images.githubusercontent.com/76678910/105009617-0a4b0580-5a7e-11eb-9f71-89d578bdfa57.png" width="60%" height="60%"></img>
-
-
+#### SELECT 문 예시
 ```sql
 SELECT * 
 FROM  DEPARTMENT;
-
-SELECT EMPNO, NAME, JOB
-FROM EMPLOYEE;
 
 SELECT CONCAT(EMPNO, '-', DEPTNO) AS '사번-부서번호'
 FROM EMPLOYEE
@@ -19,7 +18,7 @@ FROM EMPLOYEE;
 
 ```
 <img src="https://user-images.githubusercontent.com/76678910/105007477-62ccd380-5a7b-11eb-96e9-0ace40abd86a.png" width="60%" height="60%"></img>
-```
+```sql
 select name, deptno 
 from employee 
 where deptno in (10, 30);
@@ -51,12 +50,12 @@ ORDER BY NAME DESC;
 
 SELECT 구문 예제(함수의 사용)
 ```sql
-UCASE, UPPER
-mysql> SELECT UPPER('SEoul'), UCASE('seOUL');
-
 from 다음에 테이블이 없을 경우에는 테이블에서 조회하는 것이 아닙니다.
 
-LCASE, LOWER
+UPPER
+mysql> SELECT UPPER('SEoul');
+
+LOWER
 mysql> SELECT LOWER('SEoul'), LCASE('seOUL');
 
 substring
@@ -118,7 +117,12 @@ LIKE ‘%김’
 
 #### CASE WHEN THEN END
 ```sql
-SELECT ANIMAL_ID, NAME, CASE WHEN SEX_UPON_INTAKE LIKE 'Neutered%' OR SEX_UPON_INTAKE LIKE 'Spayed%' THEN 'O' ELSE 'X'END AS 중성화
+SELECT ANIMAL_ID, NAME, 
+	CASE 
+		WHEN SEX_UPON_INTAKE LIKE 'Neutered%' OR SEX_UPON_INTAKE LIKE 'Spayed%' 
+		THEN 'O' 
+		ELSE 'X'
+	END AS 중성화
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID ASC
 ```
