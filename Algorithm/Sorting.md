@@ -2,6 +2,25 @@
 <br>
 <br>
 
+## :mega: 문자열 뒤집기 
+```python
+str1 = list(map(str,input()))
+num = len(str1)
+lst = []
+
+for i in range(len(str1)):
+	lst.append(str1[num-i-1])
+
+str2 = ''.join(map(str,lst))
+print(str2)
+```
+#### 정리 
+-------------
+* 문제 잘보기
+* list(map(str,input())
+* lst.append(str1[num-i-1]
+* * ''.join(map(str,lst))
+
 
 ## :mega: 요일
 
