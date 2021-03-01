@@ -132,6 +132,27 @@ list(set(lst) - set(nxt_lst))
 2. [] -> {} 집합으로 형태변환
 3. set()-set() 빼기 가능; 없는 요소만 남음
 
+### sort() vs sorted() 
+-------------
+사용법 : list.sort()
+lst = [1, 3, 2]
+print((lst.sort())
+# None 
+원본 리스트를 정렬하되 반환 값은 None
+print(lst)
+# [1, 2, 3]
+원본 리스트의 순서를 변경
+
+사용법 : sorted(list)
+lst = [1, 3, 2]
+print(sorted(lst))
+# [1, 2, 3]
+정렬된 새로운 리스틀 반환
+print(lst)
+원본 리스트에 영향없음
+# [1, 3, 2]
+
+
 ## :mega: 모의고사 
 
 ```python
