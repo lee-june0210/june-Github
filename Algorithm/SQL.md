@@ -1,7 +1,7 @@
 # SQL
 
 #### SQL 배치순서
-<img src ="https://user-images.githubusercontent.com/76678910/109418232-a0bdff80-7a0a-11eb-8c51-bca8328eeb1e.PNG"></img>
+<img src ="https://user-images.githubusercontent.com/76678910/109505381-e26caa00-7adf-11eb-93eb-3c495264b825.PNG"></img>
 
 ### SQL 문법 정리
 
