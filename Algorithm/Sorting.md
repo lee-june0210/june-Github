@@ -145,6 +145,7 @@ print(lst)
 # [1, 2, 3]
 원본 리스트의 순서를 변경
 ```
+lst1.sort(reverse = True) # sort 내림차순 정렬
 * sorted()
 사용법 : sorted(list)
 ```python
