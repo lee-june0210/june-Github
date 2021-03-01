@@ -134,7 +134,9 @@ list(set(lst) - set(nxt_lst))
 
 ### sort() vs sorted() 
 -------------
+* sort()
 사용법 : list.sort()
+```python
 lst = [1, 3, 2]
 print((lst.sort())
 # None 
@@ -142,8 +144,10 @@ print((lst.sort())
 print(lst)
 # [1, 2, 3]
 원본 리스트의 순서를 변경
-
+```
+* sorted()
 사용법 : sorted(list)
+```python
 lst = [1, 3, 2]
 print(sorted(lst))
 # [1, 2, 3]
@@ -151,7 +155,7 @@ print(sorted(lst))
 print(lst)
 원본 리스트에 영향없음
 # [1, 3, 2]
-
+```
 
 ## :mega: 모의고사 
 
