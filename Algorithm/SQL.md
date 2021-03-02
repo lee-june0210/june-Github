@@ -153,6 +153,7 @@ where rownum < 3 ;
 LIKE ‘%김’
 
 #### CASE WHEN THEN END
+<img src ="https://user-images.githubusercontent.com/76678910/109624291-62971c00-7b81-11eb-87d0-2c0c424c7fbb.PNG"></img>
 ```sql
 SELECT ANIMAL_ID, NAME, 
 	CASE WHEN SEX_UPON_INTAKE LIKE 'Neutered%' OR SEX_UPON_INTAKE LIKE 'Spayed%' 
