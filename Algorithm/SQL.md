@@ -134,7 +134,21 @@ WHERE HOUR(DATETIME) >= 9 AND HOUR(DATETIME) < 20
 GROUP BY HOUR
 ORDER BY HOUR
 ```
-
+```SQL
+select out_ani.animal_id as ANIMAL_ID, out_ani.name as NAME
+from animal_outs out_ani
+join animal_ins in_ani
+    on out_ani.animal_id = in_ani.animal_id
+order by out_ani.datetime - in_ani.datetime desc
+limit 2
+```
+```sql
+SELECT animal_id, name from (select a.animal_id, a.name, (b.datetime-a.datetime) as cha                                  from animal_ins a, animal_outs b 
+                                 where a.animal_id = b.animal_id
+                                 order by 3 desc
+                            )
+where rownum < 3 ;
+```
 #### WHERE
 LIKE ‘%김’
 
