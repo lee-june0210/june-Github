@@ -4,7 +4,9 @@
 ## :zap: 알고리즘
 - [Greedy](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Greedy.md)
 - [Sorting](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Sorting.md)
-- [Stack,Que,Hash,Heap](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Stack%2C%20Que%2C%20Hash%2C%20Heap.md)
+- [Stack,Que,Heap](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Stack%2C%20Que%2C%20Hash%2C%20Heap.md)
+- [SQL](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/SQL.md)
+- [Hash](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Hash.md)
 
 ## :zap: Computer Science
 
