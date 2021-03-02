@@ -143,10 +143,10 @@ order by out_ani.datetime - in_ani.datetime desc
 limit 2
 ```
 ```sql
-SELECT animal_id, name from (select a.animal_id, a.name, (b.datetime-a.datetime) as cha                                  from animal_ins a, animal_outs b 
+SELECT animal_id, name from (select a.animal_id, a.name, (b.datetime-a.datetime) as cha                                  
+				from animal_ins a, animal_outs b 
                                  where a.animal_id = b.animal_id
-                                 order by 3 desc
-                            )
+                                 order by 3 desc)
 where rownum < 3 ;
 ```
 #### WHERE
