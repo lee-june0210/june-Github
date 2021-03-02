@@ -148,6 +148,7 @@ SELECT ANIMAL_ID, NAME,
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID ASC
 ```
+CASE WHEN SEX_UPON_INTAKE LIKE 'Neutered%' OR 'Spayed%' 이렇게 하면 다른 값이  
 
 컬럼명 잘보자
 
