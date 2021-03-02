@@ -152,6 +152,29 @@ where rownum < 3 ;
 #### WHERE
 LIKE ‘%김’
 
+ 일반형 함수
+
+#### NULL
+
+* NVL(표현식1, 표현식2) 
+표현식1의 결과값이 NULL이면 표현식2의 값을 출력
+
+* ISNULL(표현식1, 표현식2)  
+표현식1의 결과값이 NULL이면 표현식2의 값을 출력
+
+* NULLIF(표현식1,표현식2)  
+표현식1이 표현식2와 같으면 NULL을, 같지 않으면 표현식1을 리턴
+
+* COALESCE(표현식1, 표현식2, .... 표현식N)
+임의의 개수 표현식에서 NULL이 아닌 최초의 표현식을 나타낸다.
+모든 표현식이 NULL이라면 NULL을 리턴한다.
+
+```SQL
+SELECT ANIMAL_TYPE, NVL(NAME,'No name') as NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID
+```
+
 #### CASE WHEN THEN END
 <img src ="https://user-images.githubusercontent.com/76678910/109624291-62971c00-7b81-11eb-87d0-2c0c424c7fbb.PNG"></img>
 ```sql
