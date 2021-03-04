@@ -15,7 +15,6 @@ def solution(people, limit):
     cnt = 0
     # for i in range(len(people)): # for 문 돌리는데서 out of range 문제를 해결할 수가 없었다. 
     while people :                  # 하지만 while 문 쓰니 out of range 문제 바로 해결!
-        #print(people)
         if len(people) == 1:
             cnt += 1
             break
