@@ -11,10 +11,9 @@
 SELECT CONCAT(EMPNO, '-', DEPTNO) AS '사번-부서번호'
 FROM EMPLOYEE
 ```
-```
+```SQL
 SELECT DISTINCT DEPTNO
 FROM EMPLOYEE;
-
 ```
 <img src="https://user-images.githubusercontent.com/76678910/105007477-62ccd380-5a7b-11eb-96e9-0ace40abd86a.png" width="60%" height="60%"></img>
 ```sql
