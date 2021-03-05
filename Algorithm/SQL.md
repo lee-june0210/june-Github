@@ -10,7 +10,8 @@
 
 SELECT CONCAT(EMPNO, '-', DEPTNO) AS '사번-부서번호'
 FROM EMPLOYEE
-
+```
+```
 SELECT DISTINCT DEPTNO
 FROM EMPLOYEE;
 
@@ -20,11 +21,13 @@ FROM EMPLOYEE;
 select name, deptno 
 from employee 
 where deptno in (10, 30);
-
+```
+```
 select name, job 
 from employee 
 where name like '%A%';
-
+```
+```
 WHERE INTAKE_CONDITION NOT IN ('Aged')
 WHERE INTAKE_CONDITION <> 'Aged'
 ```
@@ -36,7 +39,8 @@ WHERE INTAKE_CONDITION <> 'Aged'
 SELECT EMPNO AS 사번, NAME AS 이름, JOB AS 직업
 FROM EMPLOYEE
 ORDER BY 이름;
-
+```
+```
 SELECT EMPNO, NAME, JOB
 FROM EMPLOYEE
 ORDER BY NAME DESC;
@@ -103,18 +107,21 @@ FROM ANIMAL_OUTS
 WHERE HOUR(DATETIME) >= 9 AND HOUR(DATETIME) < 20
 GROUP BY HOUR
 ORDER BY HOUR
-
+```
+```
 SELECT ANIMAL_ID
      , NAME
      , TO_CHAR(DATETIME, 'YYYY-MM-DD') AS "날짜"
     FROM ANIMAL_INS
     ORDER BY ANIMAL_ID;
-
+```
+```
 select ao.animal_id as ANIMAL_ID, ai.name as NAME
 from animal_outs ao join animal_ins ai on out_ani.animal_id = in_ani.animal_id
 order by ao.datetime - ai.datetime desc
 limit 2
-
+```
+```
 SELECT animal_id, name from (select a.animal_id, a.name, (b.datetime-a.datetime) as cha                                  
 				from animal_ins a, animal_outs b 
                                  where a.animal_id = b.animal_id
@@ -192,7 +199,8 @@ SELECT NAME
 FROM ANIMAL_INS
 WHERE DATETIME = (SELECT MIN(DATETIME)
 		  FROM ANIMAL_INS)
-
+```
+```
 SELECT AI.ANIMAL_ID, AI.ANIMAL_TYPE, AI.NAME
 FROM ANIMAL_INS AI JOIN (SELECT ANIMAL_ID 
 			FROM  ANIMAL_OUTS 
@@ -200,7 +208,8 @@ FROM ANIMAL_INS AI JOIN (SELECT ANIMAL_ID
 			) X ON AI.ANIMAL_ID = X.ANIMAL_ID
 WHERE AI.SEX_UPON_INTAKE LIKE 'Intact%'
 ORDER BY AI.ANIMAL_ID
-
+```
+```
 SELECT C.CART_ID
 FROM CART_PRODUCTS C JOIN (SELECT CART_ID, NAME
                     FROM CART_PRODUCTS
@@ -226,12 +235,6 @@ SELECT A.CART_ID FROM
  WHERE A.CART_ID = B.CART_ID
 ```
 
-
-
-#### TO_CHAR
-```sql
-
-```
 #### JOIN
 ```sql
 SELECT JO.ANIMAL_ID, JO.NAME
@@ -254,7 +257,6 @@ FROM (
     ON AI.ANIMAL_ID = AO.ANIMAL_ID 
     WHERE AO.ANIMAL_ID IS NULL ORDER BY AI.DATETIME) N
 WHERE ROWNUM <= 3 -- 아ㅏㅏㅏㅏㅏㅏ 이렇게 하면  3줄 먼저 짜르고 그다음에 ORDERBY 하네!!!!!!!
-
 
 -- SELECT *
 -- FROM(
