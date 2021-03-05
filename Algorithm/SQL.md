@@ -7,8 +7,6 @@
 
 #### SELECT 문 예시
 ```sql
-SELECT * 
-FROM  DEPARTMENT;
 
 SELECT CONCAT(EMPNO, '-', DEPTNO) AS '사번-부서번호'
 FROM EMPLOYEE
@@ -34,9 +32,6 @@ WHERE INTAKE_CONDITION <> 'Aged'
 <img src="https://user-images.githubusercontent.com/76678910/105007465-61031000-5a7b-11eb-95e1-c99cf208e616.png" width="60%" height="60%"></img>
 #### NAME 순서대로 = 기본 / 역순으로,  = DESC 
 ```sql
-SELECT EMPNO, NAME, JOB
-FROM EMPLOYEE
-ORDER BY NAME;
 
 SELECT EMPNO AS 사번, NAME AS 이름, JOB AS 직업
 FROM EMPLOYEE
@@ -59,7 +54,7 @@ UPPER
 mysql> SELECT UPPER('SEoul');
 
 LOWER
-mysql> SELECT LOWER('SEoul'), LCASE('seOUL');
+mysql> SELECT LOWER('SEoul');
 
 substring
 mysql> SELECT SUBSTRING('Happy Day',3,2);
@@ -85,17 +80,6 @@ mysql> SELECT MOD(234,10), 253 % 7, MOD(29,9);
 
 ### SQL_오류 모음
 
-#### limit
-where 절없이 limit 바로 사용 가능
-mysql에서만 사용가능
-ORACLE에서는 ROWNUM쓰라는데 프로그래머스에서 안먹넹
-```sql
-SELECT NAME
-FROM ANIMAL_INS
-ORDER BY DATETIME
-LIMIT 1
-```
-
 #### ORDER BY
 ```sql
 ORDER BY NAME ASC, DATETIME DESC
@@ -111,21 +95,7 @@ FROM ANIMAL_INS
 * NVL(column,"str")
 column이 null이면 "str" 반환 
 
-```sql
-SELECT ANIMAL_TYPE, nvl(name, 'No name') AS NAME, SEX_UPON_INTAKE
-from ANIMAL_INS
-ORDER BY ANIMAL_ID
-```
 
-#### GROUP BY
-```sql
-SELECT NAME, COUNT(*) AS COUNT 
-FROM ANIMAL_INS
-GROUP BY NAME
-HAVING COUNT(NAME) > 1
-ORDER BY NAME
-```
-GROUP BY 할때는 HAVING으로 COUNT 걸어야함
 #### TIME
 ```sql
 SELECT HOUR(DATETIME ) AS HOUR, COUNT(*) AS COUNT
@@ -133,26 +103,24 @@ FROM ANIMAL_OUTS
 WHERE HOUR(DATETIME) >= 9 AND HOUR(DATETIME) < 20
 GROUP BY HOUR
 ORDER BY HOUR
-```
-```SQL
-select out_ani.animal_id as ANIMAL_ID, out_ani.name as NAME
-from animal_outs out_ani
-join animal_ins in_ani
-    on out_ani.animal_id = in_ani.animal_id
-order by out_ani.datetime - in_ani.datetime desc
+
+SELECT ANIMAL_ID
+     , NAME
+     , TO_CHAR(DATETIME, 'YYYY-MM-DD') AS "날짜"
+    FROM ANIMAL_INS
+    ORDER BY ANIMAL_ID;
+
+select ao.animal_id as ANIMAL_ID, ai.name as NAME
+from animal_outs ao join animal_ins ai on out_ani.animal_id = in_ani.animal_id
+order by ao.datetime - ai.datetime desc
 limit 2
-```
-```sql
+
 SELECT animal_id, name from (select a.animal_id, a.name, (b.datetime-a.datetime) as cha                                  
 				from animal_ins a, animal_outs b 
                                  where a.animal_id = b.animal_id
                                  order by 3 desc)
 where rownum < 3 ;
 ```
-#### WHERE
-LIKE ‘%김’
-
- 일반형 함수
 
 #### NULL
 
@@ -165,13 +133,9 @@ LIKE ‘%김’
 * NULLIF(표현식1,표현식2)  
 표현식1이 표현식2와 같으면 NULL을, 같지 않으면 표현식1을 리턴
 
-* COALESCE(표현식1, 표현식2, .... 표현식N)
-임의의 개수 표현식에서 NULL이 아닌 최초의 표현식을 나타낸다.
-모든 표현식이 NULL이라면 NULL을 리턴한다.
-
 ```SQL
-SELECT ANIMAL_TYPE, NVL(NAME,'No name') as NAME, SEX_UPON_INTAKE
-FROM ANIMAL_INS
+SELECT ANIMAL_TYPE, nvl(name, 'No name') AS NAME, SEX_UPON_INTAKE
+from ANIMAL_INS
 ORDER BY ANIMAL_ID
 ```
 
@@ -186,9 +150,29 @@ SELECT ANIMAL_ID, NAME,
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID ASC
 ```
-CASE WHEN SEX_UPON_INTAKE LIKE 'Neutered%' OR 'Spayed%' 이렇게 하면 다른 값이  
+CASE WHEN SEX_UPON_INTAKE LIKE 'Neutered%' OR 'Spayed%' 이렇게 하면 다른 값 나옴. 저 위에가 맞
 
 컬럼명 잘보자
+
+#### limit
+* mysql에서만 사용가능
+* where 절없이 바로 사용 가능
+ORACLE에서는 ROWNUM쓰라는데 프로그래머스에서 안먹넹
+```sql
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATETIME
+LIMIT 
+```
+#### GROUP BY
+```sql
+SELECT NAME, COUNT(*) AS COUNT 
+FROM ANIMAL_INS
+GROUP BY NAME
+HAVING COUNT(NAME) > 1
+ORDER BY NAME
+```
+GROUP BY 할때는 HAVING으로 COUNT 걸어야함
 
 #### IN
 ```sql
@@ -196,8 +180,9 @@ WHERE user_id  IN ('user1','user3')
 
 SELECT ANIMAL_ID, ANIMAL_TYPE, NAME
 FROM ANIMAL_OUTS 
-WHERE ANIMAL_ID IN ( 
-SELECT ANIMAL_ID FROM ANIMAL_INS WHERE SEX_UPON_INTAKE LIKE 'Intact%'    )
+WHERE ANIMAL_ID IN (SELECT ANIMAL_ID 
+		    FROM ANIMAL_INS 
+		    WHERE SEX_UPON_INTAKE LIKE 'Intact%')
 AND SEX_UPON_OUTCOME NOT LIKE 'Intact%'
  ORDER BY ANIMAL_ID
 ```
@@ -206,9 +191,9 @@ AND SEX_UPON_OUTCOME NOT LIKE 'Intact%'
 SELECT NAME
 FROM ANIMAL_INS
 WHERE DATETIME = (SELECT MIN(DATETIME)
-		FROM ANIMAL_INS)
+		  FROM ANIMAL_INS)
 
-SELECT  AI.ANIMAL_ID, AI.ANIMAL_TYPE, AI.NAME
+SELECT AI.ANIMAL_ID, AI.ANIMAL_TYPE, AI.NAME
 FROM ANIMAL_INS AI JOIN (SELECT ANIMAL_ID 
 			FROM  ANIMAL_OUTS 
 			WHERE SEX_UPON_OUTCOME LIKE 'Neutered%' OR SEX_UPON_OUTCOME LIKE 'Spayed%'
@@ -227,11 +212,11 @@ ORDER BY C.CART_ID
 #### SELF JOIN 대신 
 ```sql
  #1
-SELECT     CART_ID
-FROM    CART_PRODUCTS
-WHERE CART_ID IN ( SELECT                    CART_ID
-                   FROM                        CART_PRODUCTS
-                   WHERE                        NAME = '우유')      AND NAME = '요거트'
+SELECT CART_ID
+FROM CART_PRODUCTS
+WHERE CART_ID IN ( SELECT CART_ID
+                   FROM CART_PRODUCTS
+                   WHERE NAME = '우유') AND NAME = '요거트'
 ORDER BY CART_ID ASC;
 
 #2
@@ -245,11 +230,7 @@ SELECT A.CART_ID FROM
 
 #### TO_CHAR
 ```sql
-SELECT ANIMAL_ID
-     , NAME
-     , TO_CHAR(DATETIME, 'YYYY-MM-DD') AS "날짜"
-    FROM ANIMAL_INS
-    ORDER BY ANIMAL_ID;
+
 ```
 #### JOIN
 ```sql
