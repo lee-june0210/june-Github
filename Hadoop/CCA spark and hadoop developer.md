@@ -26,6 +26,8 @@ You must be able to log in to the Cloudera Manager Server host using the root us
 The Cloudera Manager Server host must have uniform SSH access on the same port to all hosts. For more information, see Runtime and Cloudera Manager Networking and Security Requirements.
 SELinux must be disabled or set to permissive mode before running the installer.
 
+
+
 > 210222 
 
 0. 박성면이 즐겨찾기 해놓은 사이트 가서 사태의 심각성 파악
@@ -77,8 +79,11 @@ df.show
 #### 분석
 데이터가 저장된 컴퓨터에서 데이터를 분석하고 그 결과를 합친다.
 
+#### Read a file from HDFS using Spark
 
+First open core-site.xml file from location $HADOOP_HOME/etc/hadoop and check the value of property fs.defaultFS. Let's say the value is hdfs://localhost:9000 and the file location in hdfs is /home/usr/abc/fileName.txt. Then, the file URL will be : hdfs://localhost:9000/home/usr/abc/fileName.txt and following command used to read file from hdfs:
 
+var result= scontext.textFile("hdfs://localhost:9000/home/usr/abc/fileName.txt", 2)
 
 ### 용어 정리
 ----------------------
