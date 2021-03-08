@@ -5,7 +5,7 @@
 ```python
 def solution(genres, plays):
     answer = []
-    def num(n,gen): # 받아야할 값이 너무 많아서 함수를 안으로 넣어봤더니 문제 없었다. answer,
+    def num(n,gen): # 받아야할 값이 너무 많아서 함수를 안으로 넣어봤더니 문제 없었다. 
         for i in range(len(plays)):
             if genres[i] == gen and plays[i] == n: # 장르가 같으면서 재생횟수가 같은 고유번호 i를 찾아내는 방법 굿
                 if i not in answer:
