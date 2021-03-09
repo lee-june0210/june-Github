@@ -1,6 +1,6 @@
 # 스택, 큐
 ----------------
-import deque / deq = deque()를 사용하지 않고, stack에서 pop(0)을 사용할 수도 있겠지만 이러면 더 시간복잡도가 
+큐에서 굳이 import deque / deq = deque()를 사용하지 않고, stack에서 pop(0)을 사용할 수도 있겠지만 이러면 더 시간복잡도가 올라간다
 
 ## :mega: 다리를 건너는 트럭
 ```python
