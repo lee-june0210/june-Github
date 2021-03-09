@@ -69,15 +69,8 @@ val df = sqlContext.read.format("com.databricks.spark.csv").load("work/EmployeeN
 df.show
 뭐지........뭐가 먹힌거지........
 
-
-#### 빅데이터 
-한대의 컴퓨터로는 저장하거나 연산하기 어려운 규모의 거대 데이터
-#### 분산
-여러대의 컴퓨터로 나눠서 일을 처리함
-#### 저장
-데이터를 저장함.
-#### 분석
-데이터가 저장된 컴퓨터에서 데이터를 분석하고 그 결과를 합친다.
+#### mysql 오류
+http://blog.naver.com/PostView.nhn?blogId=islove8587&logNo=221970366883
 
 #### Read a file from HDFS using Spark
 
