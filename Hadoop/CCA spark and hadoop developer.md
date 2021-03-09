@@ -71,6 +71,7 @@ df.show
 
 #### mysql 오류
 http://blog.naver.com/PostView.nhn?blogId=islove8587&logNo=221970366883
+mysqld.sock 파일은 mysql 서버가 시작함과 동시에 생성되며, 꺼지면 mysqld 디렉터리 째로 없어진다.
 
 #### Read a file from HDFS using Spark
 
