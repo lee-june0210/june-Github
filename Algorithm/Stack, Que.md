@@ -4,7 +4,30 @@
 
 ## :mega: 더 맵게
 ```python
+import heapq # 알아두기, 근데 heap, stack, que 사용조건 구별은 어케하지? 테케는 거의 해결될텐데....최소값 최대값사용할때 무조건 heap을 사용해야 좋은건가
+def solution(s, K):
+    cnt = 0
+    heapq.heapify(s)
+    l = len(s)
+    while s :
+        if cnt > l-2 and s[0] < K: # if 문에서 out of range 걸리는거는 순서바꿔주면 거의 해결
+            return -1  
+        if cnt > l-1 and sum == 0:
+            return -1
+        result1 = heapq.heappop(s)
+        if result1 < K:
+            sum1 = result1 + heapq.heappop(s)*2
+            heapq.heappush(s,sum1)
+            cnt += 1
+    return cnt
 ```
+#### 정리
+-------------
+* import heapq
+* heapq.heapify(x) : 리스트 x를 즉각적으로 heap으로 변환함
+* heapq.heappush(heap, item) : item을 heap에 추가
+* heapq.heappop(heap) : heap에서 가장 작은 원소를 pop & 리턴. 비어 있는 경우 IndexError가 호출됨. 
+
 
 ## :mega: 다리를 건너는 트럭
 ```python
