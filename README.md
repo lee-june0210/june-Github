@@ -1,6 +1,4 @@
 
-:snowman: 깃허브 꾸미기 재밌떵!!
-
 ## :zap: 알고리즘
 - [Greedy](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Greedy.md)
 - [Sorting](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Sorting.md)
