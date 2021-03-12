@@ -15,7 +15,6 @@ Hadoop은 파일을 큰 블록으로 분할하고 클러스터의 노드에 배�
 
 <img src = "https://user-images.githubusercontent.com/76678910/108342830-963b8300-721e-11eb-9622-b6a4c72708a3.png"></img>
 
-* 
 
 ### hadoop environment
 #### CDP Private Cloud Installation
