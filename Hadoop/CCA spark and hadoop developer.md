@@ -29,7 +29,7 @@ SELinux must be disabled or set to permissive mode before running the installer.
 
 > 210222 
 
-0. 박성면이 즐겨찾기 해놓은 사이트 가서 사태의 심각성 파악
+0. 하둡 환경 구축 사태의 심각성 파악
 1. cloudera 제공 CDP private cloud 설치 작업 시작
 2. linux 환경 제공 요구해서 ubuntu 설치
 3. SELinux 해제 작업 중 박성면한테 2시에 전화옴 hadoop 작업 중단
