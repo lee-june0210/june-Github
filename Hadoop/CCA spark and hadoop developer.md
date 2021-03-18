@@ -140,17 +140,11 @@ Usage: hdfs dfs -put {localsrc} ... {dst}
 
 24) rm
 
-Hdfs의 특정 폴더 혹은 파일을 삭제
-Usage: hdfs dfs -rm [-f] [-r|-R] [-skipTrash] URI [URI ...]
--R : 특정 디렉토리 이하의 폴더 모두 제거
--r : -R과 동일
--skipTrash : 즉시 완전 삭제
+Hdfs의 특정 파일을 삭제
 
- 
 25) rmr
 
-rm -r과 동일한 명령어
-Usage: hdfs dfs -rmr [-skipTrash] URI [URI ...]
+Hdfs의 특정 폴더 삭제
 
 26) setfacl
 
