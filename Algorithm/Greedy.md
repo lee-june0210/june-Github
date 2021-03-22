@@ -6,32 +6,32 @@ __문제를 봤을 때 단순히 현재 상황에서 가장 좋아보이는 최�
 
 <br>
 <br>
-Lists:
-                               Complexity
-Operation     | Example      | Class     | Notes
---------------+--------------+---------------+-------------------------------
-Index         | l[i]         | O(1)	     |
-Store         | l[i] = 0     | O(1)	     |
-Length        | len(l)       | O(1)	     |
-Append        | l.append(5)  | O(1)	     | mostly: ICS-46 covers details
-Pop	          | l.pop()      | O(1)	     | same as l.pop(-1), popping at end
-Clear         | l.clear()    | O(1)	     | similar to l = []
+Lists:<br>
+                               Complexity<br>
+Operation     | Example      | Class     | Notes<br>
+--------------+--------------+---------------+-------------------------------<br>
+Index         | l[i]         | O(1)	     |<br>
+Store         | l[i] = 0     | O(1)	     |<br>
+Length        | len(l)       | O(1)	     |<br>
+Append        | l.append(5)  | O(1)	     | mostly: ICS-46 covers details<br>
+Pop	          | l.pop()      | O(1)	     | same as l.pop(-1), popping at end<br>
+Clear         | l.clear()    | O(1)	     | similar to l = []<br>
 
-Slice         | l[a:b]       | O(b-a)	     | l[1:5]:O(l)/l[:]:O(len(l)-0)=O(N)
+Slice         | l[a:b]       | O(b-a)	     | l[1:5]:O(l)/l[:]:O(len(l)-0)=O(N)<br>
 
-check ==, !=  | l1 == l2     | O(N)      |
-Insert        | l[a:b] = ... | O(N)	     | 
-Delete        | del l[i]     | O(N)	     | depends on i; O(N) in worst case
-Containment   | x in/not in l| O(N)	     | linearly searches list 
-Copy          | l.copy()     | O(N)	     | Same as l[:] which is O(N)
-Remove        | l.remove(...)| O(N)	     | 
-Pop	          | l.pop(i)     | O(N)	     | O(N-i): l.pop(0):O(N) (see above)
-Extreme value | min(l)/max(l)| O(N)	     | linearly searches list for value
-Reverse	      | l.reverse()  | O(N)	     |
-Iteration     | for v in l:  | O(N)      | Worst: no return/break in loop
-
-Sort          | l.sort()     | O(N Log N)    | key/reverse mostly doesn't change
-Multiply      | k* l         | O(k N)        | 5*l is O(N): len(l)*l is O(N**2)
+check ==, !=  | l1 == l2     | O(N)      |<br>
+Insert        | l[a:b] = ... | O(N)	     | <br>
+Delete        | del l[i]     | O(N)	     | depends on i; O(N) in worst case<br>
+Containment   | x in/not in l| O(N)	     | linearly searches list <br>
+Copy          | l.copy()     | O(N)	     | Same as l[:] which is O(N)<br>
+Remove        | l.remove(...)| O(N)	     | <br>
+Pop	          | l.pop(i)     | O(N)	     | O(N-i): l.pop(0):O(N) (see above)<br>
+Extreme value | min(l)/max(l)| O(N)	     | linearly searches list for value<br>
+Reverse	      | l.reverse()  | O(N)	     |<br>
+Iteration     | for v in l:  | O(N)      | Worst: no return/break in loop<br>
+<br>
+Sort          | l.sort()     | O(N Log N)    | key/reverse mostly doesn't change<br>
+Multiply      | k* l         | O(k N)        | 5*l is O(N): len(l)*l is O(N**2)<br>
 
 
 ## :mega: 구명보트
