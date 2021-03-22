@@ -6,6 +6,33 @@ __문제를 봤을 때 단순히 현재 상황에서 가장 좋아보이는 최�
 
 <br>
 <br>
+Lists:
+                               Complexity
+Operation     | Example      | Class     | Notes
+--------------+--------------+---------------+-------------------------------
+Index         | l[i]         | O(1)	     |
+Store         | l[i] = 0     | O(1)	     |
+Length        | len(l)       | O(1)	     |
+Append        | l.append(5)  | O(1)	     | mostly: ICS-46 covers details
+Pop	          | l.pop()      | O(1)	     | same as l.pop(-1), popping at end
+Clear         | l.clear()    | O(1)	     | similar to l = []
+
+Slice         | l[a:b]       | O(b-a)	     | l[1:5]:O(l)/l[:]:O(len(l)-0)=O(N)
+
+check ==, !=  | l1 == l2     | O(N)      |
+Insert        | l[a:b] = ... | O(N)	     | 
+Delete        | del l[i]     | O(N)	     | depends on i; O(N) in worst case
+Containment   | x in/not in l| O(N)	     | linearly searches list 
+Copy          | l.copy()     | O(N)	     | Same as l[:] which is O(N)
+Remove        | l.remove(...)| O(N)	     | 
+Pop	          | l.pop(i)     | O(N)	     | O(N-i): l.pop(0):O(N) (see above)
+Extreme value | min(l)/max(l)| O(N)	     | linearly searches list for value
+Reverse	      | l.reverse()  | O(N)	     |
+Iteration     | for v in l:  | O(N)      | Worst: no return/break in loop
+
+Sort          | l.sort()     | O(N Log N)    | key/reverse mostly doesn't change
+Multiply      | k* l         | O(k N)        | 5*l is O(N): len(l)*l is O(N**2)
+
 
 ## :mega: 구명보트
 
@@ -29,6 +56,7 @@ def solution(people, limit):
 ```
 하지만 효율성 1문제를 통과를 못했다. 참고 정보 보니, pop(),remove(),del()은 모두 효율성 오류로 처리하는 듯했다.
 도대체 저 내장함수 안쓰고도 해결하는 방법이 뭐가 있나 했더니 _cnt += 1 cnt -= 1_ 로 삭제 위치를 조정하고 다녔다. 
+
 
 ```python
 def solution(people, limit):
