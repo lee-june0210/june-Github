@@ -4,34 +4,8 @@
 즉, 매 순간 제일 최적의 해로 보이는 해를 선택하며 현재의 선택이 나중에 어떠한 영향을 미칠지는 고려하지 않는다. <br>
 __문제를 봤을 때 단순히 현재 상황에서 가장 좋아보이는 최적의 해만 선택해도 문제를 정상적으로 풀어낼 수 있는지 파악해야한다. -> 그리디의 핵심!__
 
-<br>
-<br>
-Lists:<br>
-                               Complexity<br>
-Operation     | Example      | Class     | Notes<br>
---------------+--------------+---------------+-------------------------------<br>
-Index         | l[i]         | O(1)	     |<br>
-Store         | l[i] = 0     | O(1)	     |<br>
-Length        | len(l)       | O(1)	     |<br>
-Append        | l.append(5)  | O(1)	     | mostly: ICS-46 covers details<br>
-Pop	          | l.pop()      | O(1)	     | same as l.pop(-1), popping at end<br>
-Clear         | l.clear()    | O(1)	     | similar to l = []<br>
+<img src = "https://user-images.githubusercontent.com/76678910/111928276-771e6280-8af6-11eb-8c66-732214584822.png" width = 50% height = 50% ></img>
 
-Slice         | l[a:b]       | O(b-a)	     | l[1:5]:O(l)/l[:]:O(len(l)-0)=O(N)<br>
-
-check ==, !=  | l1 == l2     | O(N)      |<br>
-Insert        | l[a:b] = ... | O(N)	     | <br>
-Delete        | del l[i]     | O(N)	     | depends on i; O(N) in worst case<br>
-Containment   | x in/not in l| O(N)	     | linearly searches list <br>
-Copy          | l.copy()     | O(N)	     | Same as l[:] which is O(N)<br>
-Remove        | l.remove(...)| O(N)	     | <br>
-Pop	          | l.pop(i)     | O(N)	     | O(N-i): l.pop(0):O(N) (see above)<br>
-Extreme value | min(l)/max(l)| O(N)	     | linearly searches list for value<br>
-Reverse	      | l.reverse()  | O(N)	     |<br>
-Iteration     | for v in l:  | O(N)      | Worst: no return/break in loop<br>
-<br>
-Sort          | l.sort()     | O(N Log N)    | key/reverse mostly doesn't change<br>
-Multiply      | k* l         | O(k N)        | 5*l is O(N): len(l)*l is O(N**2)<br>
 
 
 ## :mega: 구명보트
