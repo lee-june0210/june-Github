@@ -9,7 +9,7 @@ Hadoop은 파일을 큰 블록으로 분할하고 클러스터의 노드에 배�
 ### Spark란?
 
 빅데이터 분산 처리 시스템 / 빅데이터 클러스터 환경에서 데이터를 병렬 처리 할 수 있는 오픈소스 소프트웨어  
-기존 Disk 기반으로 처리되는 MapReduce의 처리 한계를 극복하고자 연구하여 개발
+기존 Disk 기반으로 처리되는 MapReduce의 처리 한계를 극복하고자 inmemory 형태로 개발되어 속도가 100배 가까이 빠름
 
 
 <img src = "https://user-images.githubusercontent.com/76678910/108342830-963b8300-721e-11eb-9622-b6a4c72708a3.png"></img>
