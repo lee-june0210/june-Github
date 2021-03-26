@@ -81,9 +81,6 @@ Usage: hdfs dfs -du [-s] [-h] URI [URI ...]
 -s : 각각의 파일(혹은 directory) size의 sum 값을 보여줌
 -h : Show human-readable format
 
-11) dus
-
-특정 file의 length를 보여줌.
  
 12) expunge
 
@@ -95,10 +92,7 @@ Usage: hdfs dfs -expunge
 Hdfs의 파일을 local directory로 다운로드
 Usage: hdfs dfs -get [-ignorecrc] [-crc] {src} {localdst}
 
-14) getfacl
 
-Hdfs의 특정 파일 혹은 디렉토리의 ACLs(Access Control Lists)정보를 보여줌
-Usage: hdfs dfs -getfacl [-R] {path}
  
 15) getfattr
 
@@ -145,11 +139,6 @@ Hdfs의 특정 파일을 삭제
 25) rmr
 
 Hdfs의 특정 폴더 삭제
-
-26) setfacl
-
-Hdfs의 특정 폴더 혹은 파일에 대해 Access Control Lists(ACLs)를 set
-Usage: hdfs dfs -setfacl [-R] [-b|-k -m|-x {acl_spec} {path}]|[--set {acl_spec} {path}]
 
 27) setfattr
 
