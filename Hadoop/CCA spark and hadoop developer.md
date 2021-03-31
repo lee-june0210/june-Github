@@ -92,14 +92,6 @@ Usage: hdfs dfs -expunge
 Hdfs의 파일을 local directory로 다운로드
 Usage: hdfs dfs -get [-ignorecrc] [-crc] {src} {localdst}
 
-
- 
-15) getfattr
-
-Hdfs의 특정 파일 혹은 디렉토리의 속성 정보들을 나열, 보여줌
-Usage: hdfs dfs -getfattr [-R] -n name | -d [-e en] {path}
--R : 파일 혹은 디렉토리 이하의 폴더들에 대한 정보 보여줌
-
 16) getmerge
 
 Hdfs내부의 source file을 local file에 append하여 붙여 다운로드
