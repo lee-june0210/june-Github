@@ -25,10 +25,12 @@ Saveas는 경로 안에 classOf해서 compress하고 write은 sqlContext.setConf
 val sqlContext = new org.apache.spark.sql.SQLContext(sc) 
 import sqlContext.impIicits._ 
 import org.apache.spark.sql._ 
+
 # SQL
 아주 똑똑하게 워드색기……..
 .toDF()
 registerTempTable(“”)
+
 # avro
 spark.read.format(“avro”).load(“경로”)
 # parquet
