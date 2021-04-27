@@ -1,10 +1,13 @@
 
 ## :zap: 알고리즘
+- [DFS,BFS](https://github.com/lee-june0210/june-Github/tree/main/Algorithm)
 - [Greedy](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Greedy.md)
+- [Hash](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Hash.md)
+- [SQL](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/SQL.md)
 - [Sorting](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Sorting.md)
 - [Stack,Que,Heap](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Stack%2C%20Que.md)
-- [SQL](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/SQL.md)
-- [Hash](https://github.com/lee-june0210/june-Github/blob/main/Algorithm/Hash.md)
+
+
 
 ## :zap: Computer Science
 
